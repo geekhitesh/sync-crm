@@ -160,29 +160,8 @@ Class SyncCRMService{
                    {
                       //print_r($request);
                       $request =  $request['sObject']; 
-
-                      /******************************************************
-                      *   Call this function to parse the request.
-                      *   Extract the Property Ffields from original request.
-                      *******************************************************/
-
                       $this->parseRequest($request);
-
-
-
-                      /******************************************************
-                      *   Call this function to map values of salesforce fields 
-                      *   to the R-Square Fields. This is the most important function. 
-                      *******************************************************/
-
                       $decoded_string .=  $this->attributeMapper();
-
-                      
-                      /******************************************************
-                      *   On the basis of transaction / request type,  
-                      *   call the corresponding function. 
-                      *******************************************************/
-
                       if($this->request_type = "INSERT")
                       {
                           $this->insertProperty();
@@ -286,8 +265,7 @@ Class SyncCRMService{
       $status = true;
        if(isset($this->mapped_city_list[$this->city]))
        {
-
-          $this->city = $this->mapped_city_list[$this->city][1]; /* [1] value will always correspond to r-square city name  */ 
+          $this->city = $this->mapped_city_list[$this->city][1];
           if($this->city != "NA")
           {
             $this->city_id = $this->city_list[$this->city]['cityID'];  
@@ -314,27 +292,11 @@ Class SyncCRMService{
                 }
                 $echo_string .= "<br/>City Name:".$this->city."; City Id:".$this->city_id."; Area Name:".$this->area. "; Area Id:".$this->area_id;
             }
-            else
-            {
-                $status = false; 
-
-            }    
           }
           else
           {
              $status = false;
           }
-
-          /***********************************************************************************
-          *   We will always derive property type on the basis of property sub type.
-          *   If Property Sub type received from salesforce is empty
-          *   Then, Property type should be checked in mapped_property_type_sub_type_list
-          *   ELSE Property sub tyoe should be checked in mapped_property_type_sub_type_list 
-          *************************************************************************************
-          *   Important to note: Property sub type will never come empty from salesforce.
-          *   This is just for precaution purpose. Always Else part should get hit.
-          *************************************************************************************/
-
           if($this->property_sub_type == "")
           {
                
@@ -441,12 +403,8 @@ Class SyncCRMService{
                         "&website_id=".$website_id.
                         "&phone=9927701230".
                         "&email=crm@buniyad.com"; 
-
-    /***** Commenting the code to push data in r-square until completion of testing of area ********/
-
-    /*  $response = $client->request('GET',$endpoint);
-        $result = $response->getBody(); */
-        $result = "success";
+        $response = $client->request('GET',$endpoint);
+        $result = $response->getBody();
         if($result == "success")
         {
            $this->stats['insert']['success']++;
