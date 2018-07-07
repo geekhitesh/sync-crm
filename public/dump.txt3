@@ -1,0 +1,25 @@
+
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+ <soapenv:Body>
+  <notifications xmlns="http://soap.sforce.com/2005/09/outbound">
+   <OrganizationId>00DO0000004uXFzMAM</OrganizationId>
+   <ActionId>04kO00000008Qp6IAE</ActionId>
+   <SessionId xsi:nil="true"/>
+   <EnterpriseUrl>https://cs5.salesforce.com/services/Soap/c/42.0/00DO0000004uXFz</EnterpriseUrl>
+   <PartnerUrl>https://cs5.salesforce.com/services/Soap/u/42.0/00DO0000004uXFz</PartnerUrl>
+   <Notification>
+    <Id>04lO000000BNahVIAT</Id>
+    <sObject xsi:type="sf:RealtyForce__Matched_Property__c" xmlns:sf="urn:sobject.enterprise.soap.sforce.com">
+     <sf:Id>a0TO0000003t9npMAA</sf:Id>
+     <sf:Name>P-399752</sf:Name>
+     <sf:RealtyForce__Availability_Status__c>Pending</sf:RealtyForce__Availability_Status__c>
+     <sf:RealtyForce__City__c>Noida</sf:RealtyForce__City__c>
+     <sf:RealtyForce__Location__c>1 Sector</sf:RealtyForce__Location__c>
+     <sf:RealtyForce__State__c>Uttar Pradesh</sf:RealtyForce__State__c>
+     <sf:Share_To_Buniyad_Website__c>false</sf:Share_To_Buniyad_Website__c>
+    </sObject>
+   </Notification>
+  </notifications>
+ </soapenv:Body>
+</soapenv:Envelope>

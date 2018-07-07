@@ -1,0 +1,14 @@
+﻿Actual SF Property Type,Derived SF Property Type,RR Property Type
+Flats,Flats,Residential
+Residential,Residential,Residential
+Industrial,Industrial,Commercial
+Commercial,Commercial,Commercial
+Institutional,Institutional,Commercial
+Rented Out,Rented Out,Commercial
+Xact INDUSTRIAL,NA,NA
+Xact IT Sector,NA,NA
+Xact Commercial,NA,NA
+Xact Retail,NA,NA
+XactSearch,NA,NA
+Others,NA,NA
+Advertisement,NA,NA

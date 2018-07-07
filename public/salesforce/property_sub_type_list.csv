@@ -1,0 +1,60 @@
+Actual SF Property Subtype,Derived SF Property Subtype,RR Property Sub Type
+ANY,NA,NA
+Banquet Hall/ Club,NA,NA
+Builder Floor,Builder Floor Apartment,Builder Floor Apartment
+Building,NA,NA
+Business Center,Business Centre,Business Centre
+CC,NA,NA
+CLUB,Hotel / Resort,Hotel / Resort
+Commercial Plot,Commercial Land,Commercial Land
+Corporate,NA,NA
+Factory,Factory,Factory
+Factory/shed,Factory,Factory
+Farmhouse,Farm House,Farm House
+Flat,Apartment,Apartment
+Flats,Apartment,Apartment
+Floor,NA,NA
+FSI,NA,NA
+FURNISHED,NA,NA
+Guest House,Guest House,Guest House
+GUEST_HOUSE,Guest House,Guest House
+Hospital,Hospital,Hospital
+HOSTEL,NA,NA
+Hotel,Hotel,Hotel
+Industrial Plot,Industrial Plot,Industrial Plot
+Industrial Shed,Industrial Shed,Industrial Shed
+Institute/Collage,school,School
+Institutional Building,Institutional Building,Institutional Building
+Institutional Plot,Institutional Plot,Institutional Plot
+IT,NA,NA
+IT_ITES,NA,NA
+Kothi,Bungalow/Villa,Bungalow/Villa
+Kothi/Plot,Bungalow/Villa,Bungalow/Villa
+Mall,NA,NA
+MART,NA,NA
+MixLand,NA,NA
+NURSING HOME,NA,NA
+OFFICE,OFFICE,Office
+Office Space,Office Space,Office Space
+Offices,Office,Office
+Other,NA,NA
+OTHERS,NA,NA
+P.G,NA,NA
+PENT HOUSE,PENTHOUSE,Penthouse
+Plot,NA,NA
+Plot/Factory,Industrial Plot,Industrial Plot
+Plot/Kothi,Residential Plot,Residential Plot
+Plot/Shed,Industrial Shed,Industrial Shed
+RENTED OUT PROPERTY,RENTED OUT PROPERTY,NA
+Sale/Rent,NA,NA
+School,School,School
+Shed,Industrial Shed,Industrial Shed
+SHOP,SHOP,Shop
+Shop/Showroom,Showroom,Showroom
+Shops,Shop,Shop
+Vacant commercial /Retail,NA,NA
+Villas,Bungalow/Villa,Bungalow/Villa
+Warehouse,Warehouse/Godown,Warehouse/Godown
+Warehouse/Godown,Warehouse/Godown,Warehouse/Godown
+Xact Factory,NA,NA
+XactSearch,NA,NA
