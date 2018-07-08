@@ -42,8 +42,8 @@ Class SyncCRMService{
        $this->mapped_property_type_list     = json_decode($this->convertCSVToJSON('property_type_list.csv'),TRUE);
        $this->mapped_property_sub_type_list = json_decode($this->convertCSVToJSON('property_sub_type_list.csv'),TRUE);
        $this->mapped_property_type_sub_type_list = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
-       //var_dump($this->mapped_area_list);
-       //var_dump($this->mapped_property_sub_type_list);
+       //$this->__debug($this->mapped_area_list);
+       //$this->__debug($this->mapped_property_sub_type_list);
        $this->stats = array();
        $this->stats['insert']['success']= 0;
        $this->stats['delete']['success'] = 0;
@@ -63,9 +63,9 @@ Class SyncCRMService{
        $this->property_sub_type_list = $this->property_filter_data['propertySubTypes'];
        $this->city_list = $this->property_filter_data['cities'];
        $this->convertAttributeListToKeys();
-       //var_dump($this->property_type_list);
-       //var_dump($this->city_list);
-       //var_dump($this->property_sub_type_list);
+       //$this->__debug($this->property_type_list);
+       //$this->__debug($this->city_list);
+       //$this->__debug($this->property_sub_type_list);
     }
 
     private function convertAttributeListToKeys()
@@ -125,14 +125,14 @@ Class SyncCRMService{
        $area_list = $area_list['localities'];
        $area_array =array();
        //$this->area_list[$city_id] = json_decode($response->getBody(),true);
-       //var_dump($area_list);
+       //$this->__debug($area_list);
        foreach ($area_list as $area)
        {
           $area_array[str_ireplace("Sector ","",$area['areaName'])] = $area;  
 
        }
        $this->area_list[$city_id] = $area_array;
-       //var_dump($this->area_list);
+       //$this->__debug($this->area_list);
     }
 
     function is_assoc($arr)
@@ -142,14 +142,13 @@ Class SyncCRMService{
 
     public function syncProperties($records)
     {
-        //var_dump($this->mapped_city_list);
+        //$this->__debug($this->mapped_city_list);
         foreach($records as $record)
         {
             $decoded_string = "";
             $this->request_status = "C";
             //echo $record->request_input."<br/>";
             $request = json_decode($record->request_input,TRUE); 
-            //print_r($request); 
             $associative_array = $this->is_assoc($request['Body']['notifications']['Notification']);
             if(isset($request['Body']['notifications']['Notification']))
             {
@@ -214,7 +213,7 @@ Class SyncCRMService{
            $record->request_status = $this->request_status;
            $record->save(); 
         }         
-        var_dump($this->stats);
+        $this->__debug($this->stats);
     }
 
     private function parseRequest($request)
@@ -333,6 +332,10 @@ Class SyncCRMService{
           *************************************************************************************
           *   Important to note: Property sub type will never come empty from salesforce.
           *   This is just for precaution purpose. Always Else part should get hit.
+          *************************************************************************************
+          * Property sub type will be the base to find the property subtype as well.
+          * i.e if property_sub_type = 'Farmhouse' then property_type = 'residential'
+          * This mapping is present in property_type_sub_type_list.csv file
           *************************************************************************************/
 
           if($this->property_sub_type == "")
@@ -474,5 +477,18 @@ Class SyncCRMService{
     private function shareToWebsite($share,$availability_name)
     {
         $result = DB::update("update v_rr_property set push_to_website=? where Comments like 'P-%' and Comments=?",[$share,$availability_name]);
-    }   
+    } 
+
+
+    public function __debug($val)
+    {
+        if( env('DEBUG'))
+        {
+          if(is_array($val))
+            var_dump($val);
+          else
+            echo "<br/>$val";
+        }
+
+    }  
 } 
