@@ -60,7 +60,7 @@
 163 Sector,NA,NA
 164 Sector,NA,NA
 168 Sector,NA,NA
-16A Sector,16A,#N/A
+16A Sector,16A,NA
 16B Sector,16B,16B
 17 Sector,17,17
 17A Sector,NA,NA
@@ -76,7 +76,7 @@
 23 Sector,23,23
 24 Sector,24,24
 25 Sector,25,25
-25A Sector, 25A, 25A
+25A Sector,25A,25A
 26 Sector,26,26
 26A Sector,NA,NA
 27 Sector,27,27
@@ -210,7 +210,6 @@ Noida Extension 1,Noida Phase 1,Noida Phase 1
 Noida Extension 4,Noida Phase 2,Noida Phase 2
 noida extinction,Noida Phase 3,Noida Phase 3
 Noida Heights,NA,NA
-----None----,NA,NA
 NRI Residency YEA,NA,NA
 NSEZ,Opp to NSEZ,Opp to NSEZ
 NULL,NA,NA
@@ -244,3 +243,534 @@ UNITECH HEIGHT,NA,NA
 UNITECH MALL,NA,NA
 vivek vihar,NA,NA
 Yamuna Expressway,Yamuna Expressway,Yamuna Expressway
+,,
+EIE,NA ,NA 
+ATS Dolce,NA ,NA 
+Ashiana Orchids,NA ,NA 
+Divine Grace Society ,NA ,NA 
+Omaxe ITC,NA ,NA 
+47 Sector,NA,NA
+Alfa,Alfa,Alfa
+Alfa Commercial Belt ,Alfa Commercial Belt ,Alfa Commercial Belt 
+Ambe Bharti,NA,NA
+Amrapali Grand ,NA,NA
+Anand Ashray,NA,NA
+Ansal Golf Link-I,Ansal Golf Links 1,Ansal Golf Links 1
+Ansal Golf Link-II,Ansal Golf Link-II,Ansal Golf Link-II
+Ansal Megapolis,NA,NA
+Assal Plaza,NA,NA
+Arsh Complex,NA,NA
+Assotech Springfields,NA,NA
+Ats Paradiso,NA,NA
+AWHO Society,NA,NA
+Beta,Beta,Beta
+Black Gold Society,NA,NA
+BPTP ,NA,NA
+Canara Bank Society ,NA,NA
+Celebrity Greens,NA,NA
+Chi,Chi,Chi
+Chi Phi,Chi Phi,Chi Phi
+Dadri ,Dadri ,Dadri 
+Delta,Delta,Delta
+EIEI,NA,NA
+Ecotech -1,Ecotech 1,Ecotech 1
+Ecotech -11,NA,NA
+Ecotech -12,NA,NA
+Ecotech -2,Ecotech 2,Ecotech 2
+Ecotech -6,NA,NA
+Elanki Enclave ,NA,NA
+Eldeco Green View ,NA,NA
+Eldeco Green Meadow,NA,NA
+Eldeco Residential Greens,NA,NA
+Engineers Park,NA,NA
+EPIP,NA,NA
+Eta -2,Eta II,Eta II
+Expo Mart,NA,NA
+G.Noida Shopping Plaza,NA,NA
+G.T.Road ,NA,NA
+Gail Society ,NA,NA
+Gama ,gama,gama
+Gandharve Society,NA,NA
+Gharonda Apartment ,NA,NA
+Golf Gardenia,NA,NA
+Golf Vista Apatment ,NA,NA
+Grande Foreste ,NA,NA
+Gand Vebezia,NA,NA
+Green Wood- I,NA,NA
+Green Wood- II,NA,NA
+Ecotech -3,Ecotech 3,Ecotech 3
+Harmukh Apartment,NA,NA
+Himsagar Apartment,NA,NA
+Infomatics Apartment,NA,NA
+Institutional Green,NA,NA
+J.P Greens,Jaypee Greens,Jaypee Greens
+Jaypee Sports City ,Sports City,Sports City
+Khushboo Apartment,NA,NA
+Knowledge Park -1,Knowledge Park I,Knowledge Park I
+Knowledge Park -2,Knowledge Park II,Knowledge Park II
+Knowledge Park -3,Knowledge Park III,Knowledge Park III
+Knowledge Park -4,Knowledge Park IV,Knowledge Park IV
+Knowledge Park -5,Knowledge Park V,Knowledge Park V
+Lg Employee Society ,NA,NA
+M.I.Legacy,NA,NA
+M.U.P,NA,NA
+Manglapuri,NA,NA
+Meenakshi Society,NA,NA
+Millenium Village ,NA,NA
+MSX Mall,NA,NA
+MU,MU,MU
+MU 1,MU 1,MU 1
+MU 2,MU 2,MU 2
+Nea Apartment ,NA,NA
+Nitishree Alstonia,NA,NA
+NTPC Society ,NA,NA
+OCP,NA,NA
+Omaxe Arcade ,NA,NA
+Omaxe NRI City ,NA,NA
+Omaxe Palm Greens,NA,NA
+Omaxe Putting Greens,NA,NA
+Omega,Omega,Omega
+Omicron I,Omicron 1,Omicron 1
+Omicron IA,Omicron 1A,Omicron 1A
+Omicron II,Omicron2,Omicron2
+Omicron III,Omicron3,Omicron3
+P 1,NA,NA
+P 2,P 2,P 2
+P 3,P 3,P 3
+P 4,NA,NA
+P 5,NA,NA
+P 6,NA,NA
+P 7,NA,NA
+Paras Deep Society ,NA,NA
+Parsavnath Edens,NA,NA
+Parsavnath Estate,NA,NA
+Parsavnath Panorama,NA,NA
+Parsavnath Platinum,NA,NA
+Parsavnath Priviledge,NA,NA
+Phi,Phi,Phi
+Pi -1,Phi I,Phi I
+Pi -2,Phi II,Phi II
+Plumeria Garden,NA,NA
+Prakash Industrial Estate ,NA,NA
+Purvanchal Heights,NA,NA
+Purvanchals,NA,NA
+Purvanchal Silver City -2,NA,NA
+Raksha Enclave ,NA,NA
+Samia Media Village ,NA,NA
+Samia Singapore Residency ,NA,NA
+Samvad Apartment,NA,NA
+Satbari,NA,NA
+Senior Citizen,NA,NA
+Sigma,Sigma,Sigma
+Sigma -3,Sigma III,Sigma III
+Sigma -4,Sigma IV ,Sigma IV 
+Sikandrabad,NA,NA
+Site B,Site B,Site B
+Site -C,Site C,Site C
+Site-IV,Site 4,Site 4
+Site-V,Site 5,Site 5
+Sivkala Charm Society ,NA,NA
+SNG Plaza,NA,NA
+Supertech Czar Suite,NA,NA
+Swarn  Nagri ,Swarn Nagri ,Swarn Nagri 
+Tata Steel Enclave ,NA,NA
+Techzone ,Techzone,Techzone
+Techzone - 4,Tech Zone 4 ,Tech Zone 4 
+Unitech Cascade ,NA,NA
+Unitech Heights,NA,NA
+Unitech Horizon,NA,NA
+Unitech Verve ,NA,NA
+Wegman IT Park,NA,NA
+Xu -1,Xu I ,Xu I 
+Xu -2, Xu 2 , Xu 2 
+Xu -3,Xu III,Xu III
+Zeta,Zeta,Zeta
+Zeta -2,Zeta 2,Zeta 2
+Pari chowk,Pari Chowk,Pari Chowk
+Vrinda City ,NA,NA
+Unitech Habitat,NA,NA
+N.R.I. City ,Nri City,Nri City
+Icon Apartment ,NA,NA
+Building No.-31,NA ,NA 
+M G Road,NA ,NA 
+New Rohtak Road,NA ,NA 
+27 Sector ,27,27
+EIA,NA ,NA 
+Golf Link 2,Golf Link 2,Golf Link 2
+Golf Link 1,Golf Link I,Golf Link I
+Greater Noida-West,Greater Noida West,Greater Noida West
+Hemisphere ,NA ,NA 
+Paramount Golf Foreste,NA ,NA 
+Gama 2,Gama 2,Gama 2
+3 Sector ,3,3
+36 Sector ,36,36
+16c Sector ,NA,NA
+37 Sector ,37,37
+2 Sector ,2,2
+Unitech Mall ,NA ,NA
+Uppal Chadha Plum,NA ,NA
+Eta  ,Eta ,Eta 
+Golf course Road,Golf Course Road ,Golf Course Road 
+Mg Road Gurgaon,MG Road,MG Road
+Sushant Lok 2,Sushant Lok 2 ,Sushant Lok 2 
+Sohna road,Sohna Road,Sohna Road
+69 Sector,69,69
+Golf course Ext. Road,Golf Course Road,Golf Course Road
+DLF 4,Dlf Phase 4,Dlf Phase 4
+Sushant Lok 1,Sushant Lok 1 ,Sushant Lok 1 
+109 Sector,109,109
+DLF 1,Dlf Phase 1 ,Dlf Phase 1 
+Dharuhera,Dharuhera,Dharuhera
+DLF 3,Dlf Phase 3,Dlf Phase 3
+23A Sector,23A,23A
+DLF II,Dlf Phase 2,Dlf Phase 2
+DLF IV,Dlf Phase 4 ,Dlf Phase 4 
+DLF III,Dlf Phase 3 ,Dlf Phase 3 
+DLF I,Dlf Phase 1,Dlf Phase 1
+RAHEJA ATLANTIS,NA,NA
+114 Sector,114,114
+DHARUHEDA,Dharuhera ,Dharuhera 
+95 Sector,95,95
+SAHARA MALL,NA,NA
+Manesar Sector 1,Manesar Sector 1,Manesar Sector 1
+Manesar Sector 4,Manesar Sector 4,Manesar Sector 4
+Dlf Phase II,Dlf Phase 2,Dlf Phase 2
+DLF PH III,Dlf Phase 3,Dlf Phase 3
+Sultan Pur,Sultanpur ,Sultanpur 
+Golf Course,Golf Course Road ,Golf Course Road 
+Phase 1,Dlf Phase 1 ,Dlf Phase 1 
+WELLDONE TECH PARK,NA,NA 
+NIRVANA COUNTRY-1,NA,NA
+Orris,NA,NA
+17A Sector,17A ,17A 
+VATIKA CITY,NA,NA 
+SUSHANT LOK I,Sushant Lok 1 ,Sushant Lok 1 
+BPTP,NA,NA 
+BPTP Spacio,NA,NA
+89A Sector,89 A ,89 A 
+88A Sector,88 A ,88 A 
+63A Sector,63A,63A
+Radhey Mohan Drive,,
+Dera Mandi,,
+GK1,,
+Kapasera,,
+Saket,,
+East of Kailash,,
+pushpanjali.,,
+Jangpura,,
+Mohan Cooperative,,
+Sunder Nagar,,
+Lajpat nagar -1,,
+Sarvodya Enclave,,
+Okhla ph 2,,
+Nehru Place,,
+Kailash Colony,,
+Maharani Bagh,,
+Kalkaji,,
+Defence Colony,,
+mother terresa,,
+Lajpat nagar -3,,
+Chanakyapuri,,
+Shivalik,,
+Okhla ph 1,,
+Chattarpur,,
+Safdarjung Development Area,,
+Lajpat nagar -2,,
+Asola-2,,
+South Ex 1,,
+Lajpat nagar -4,,
+Sultanpur,,
+C R Park,,
+sarvpriya vihar,,
+Greater Kailash -2,,
+New Friends Colony,,
+hauz khas enclave,,
+Malviya Nagar,,
+Green Park Extn,,
+DLF chattrpur,,
+GREEN PARK MAIN,,
+Kailash Hills,,
+HAUZ KHAS,,
+Jasola,,
+Safdarjung Enclave,,
+Ghitorni,,
+Nev Sarai,,
+South Ex 2,,
+Shanti Niketan,,
+Paschim Marg Vasant Vihar,,
+Okhla ph 3,,
+Sainik Farm,,
+Anand Niketan,,
+Zamrudpur,,
+NIZAMUDDIN WEST,,
+Anand lok,,
+Pamposh Enclave,,
+Gadaipur,,
+Vasant Vihar,,
+Panchsheel Park,,
+G.K ENCL-1,,
+Satbari,,
+Ishwar Nagar,,
+Asola,,
+Uday Park,,
+Sukhdev Vihar,,
+Nehru Enclave,,
+Sarita Vihar,,
+Kalindi Colony,,
+Neeti Bagh,,
+----None----,,
+Vasant kunj,,
+Gulmohar Park,,
+Mayfair Garden,,
+Geetanjali Enclave,,
+Jor Bagh,,
+Hemkunt colony,,
+GREATER KAILASH-4,,
+Kotla,,
+WESTEND,,
+G.K ENCL-2,,
+Panchsheel Enclave,,
+SOAMI NAGAR,,
+NAVJEEVAN VIHAR,,
+Amar Colony,,
+Munirka,,
+Chirag Enclave,,
+Alaknanda,,
+Greater Kailash -3,,
+National Park,,
+Sheikh Sarai 1,,
+Bhati mines,,
+Gulmohar Enclave,,
+friends colony east,,
+NIZAMUDDIN EAST,,
+Padmini Enclave,,
+Sadhna Enclave,,
+Srifort Road,,
+Soam Vihar,,
+Panchsheel,,
+Yusuf Sarai,,
+Barakhamba Road,,
+Golf Link,,
+Chattarpur Enclave,,
+Jaunapur,,
+Lado Sarai,,
+Asiad Village Khel Gaon,,
+Freedom Fiter Enclave,,
+Basant Lok,,
+Sant Nagar,,
+Fatehpur Beri,,
+Western Greens,,
+Siddharth Enclave,,
+Press Enclave,,
+Vasant Enclave,,
+Main Mathura Road,,
+Khanpur,,
+Sheikh Sarai 2,,
+Bhikaji Cama Place,,
+Tuglqabad,,
+Bhogal,,
+Friends Colony West,,
+Adhchini,,
+Govind Puri Extn,,
+Dwarka,,
+Goutam Nagar,,
+Mahipalpur,,
+MG Road,,
+Mehrauli,,
+Ayanagar,,
+Rangpuri,,
+Bijwasan,,
+asiad village,,
+Khan Market,,
+Ashram,,
+Aradhna Enclave,,
+Sahdulla Jab,,
+"Safdarjung Enclave, Jangpura",,
+phase I,,
+Okhla,,
+phase II,,
+DLF,,
+NEW FREINDS COLONY,,
+South Extn,,
+Jangpura Extn,,
+GREEN PARK,,
+Nizamuddin,,
+Jasola Vihar,,
+Greater Kailash,,
+Sai apartments,,
+Andrews Ganj,,
+D L F QUTAB ENC,,
+G.T. road South,,
+Lajpat Nagar,,
+Okhla 3,,
+Masjid Moth,,
+Sajdarjung Development Area,,
+AGRICALTURE LAND,,
+ANY,,
+Badarpur,,
+VASANT MARG,,
+Greater Kailash-2,,
+Tughlakabad,,
+Gautam Nagar,,
+Greater Kailash-1,,
+Lodhi Road,,
+Mandakini Enclave,,
+R K Puram,,
+KOTLA MUBARAK PUR,,
+Amar Colony Lajpat Nagar,,
+Safadarjung Enclave,,
+Safdarjang Enclave,,
+Jang pura B,,
+Connaught Place,,
+Friends Colony,,
+jamia nager,,
+Okhla 2,,
+Sarla Jhab,,
+East Friends Colony,,
+"sant nagar, east of kailash",,
+New Delhi,,
+Janak Puri,,
+Jangpura Bhogal,,
+Kailash Kolony,,
+Safdajung Enclave,,
+Jang pura,,
+jamiya nagar,,
+LAXMI NAGAR,,
+Masoodpur Vasant Kunj,,
+Mahaveer Enclave,,
+TUGHLAKABAD EXT,,
+MAHIPAL PUR,,
+Krishna Market,,
+South Delhi,,
+Palam,,
+Triveni Complex,,
+jamia,,
+Wazir Nagar,,
+Sheikh Sarai,,
+Katwaria Sarai,,
+Huaz Khas,,
+Safadarjung,,
+Niti bagh,,
+East Patel Nagar,,
+Living Style Mall,,
+FARIDABAD,,
+Jang pura Extn,,
+OKHLA -1,,
+Paschim Vihar,,
+okhla ph i,,
+South Ex,,
+Greater Kailash Enclave,,
+Khan Pur,,
+vasat kunj,,
+Greater Kailsh,,
+Greater Kailash 1,,
+Kalka Ji,,
+East Nizamuddin,,
+G.K ENCL-3,,
+Tughlakabad Extn,,
+Pushp Vihar,,
+Kotla Mubarakpur,,
+Jamia Nagar,,
+Sarojni Nagar,,
+kalindi,,
+Gulrnohar Park,,
+Mandi,,
+Shrinivas puri,,
+Deoli,,
+Dera village,,
+shaheen bagh,,
+DLF Qutub Enc,,
+Nehru appartment,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
+,,
