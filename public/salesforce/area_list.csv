@@ -1,4 +1,4 @@
-﻿Actual SF Location,Derived SF Location,RR Area
+Actual SF Location,Derived SF Location,RR Area
 1 Sector,1,1
 10 Sector,10,10
 100 Sector,100,100
@@ -60,7 +60,7 @@
 163 Sector,NA,NA
 164 Sector,NA,NA
 168 Sector,NA,NA
-16A Sector,16A,NA
+16A Sector,16A,#N/A
 16B Sector,16B,16B
 17 Sector,17,17
 17A Sector,NA,NA
@@ -210,6 +210,7 @@ Noida Extension 1,Noida Phase 1,Noida Phase 1
 Noida Extension 4,Noida Phase 2,Noida Phase 2
 noida extinction,Noida Phase 3,Noida Phase 3
 Noida Heights,NA,NA
+----None----,NA,NA
 NRI Residency YEA,NA,NA
 NSEZ,Opp to NSEZ,Opp to NSEZ
 NULL,NA,NA
@@ -249,6 +250,13 @@ ATS Dolce,NA ,NA
 Ashiana Orchids,NA ,NA 
 Divine Grace Society ,NA ,NA 
 Omaxe ITC,NA ,NA 
+1 Sector,1,1
+2 Sector,2,2
+3 Sector,3,3
+10 Sector,10,10
+11 Sector,11,11
+36 Sector,36,36
+37 Sector,37,37
 47 Sector,NA,NA
 Alfa,Alfa,Alfa
 Alfa Commercial Belt ,Alfa Commercial Belt ,Alfa Commercial Belt 
@@ -384,6 +392,7 @@ Wegman IT Park,NA,NA
 Xu -1,Xu I ,Xu I 
 Xu -2, Xu 2 , Xu 2 
 Xu -3,Xu III,Xu III
+Yamuna Expressway,Yamuna Expressway,Yamuna Expressway
 Zeta,Zeta,Zeta
 Zeta -2,Zeta 2,Zeta 2
 Pari chowk,Pari Chowk,Pari Chowk
@@ -391,6 +400,8 @@ Vrinda City ,NA,NA
 Unitech Habitat,NA,NA
 N.R.I. City ,Nri City,Nri City
 Icon Apartment ,NA,NA
+Noida Extension,Noida Extension,Noida Extension
+Divine Grace Society ,NA ,NA 
 Building No.-31,NA ,NA 
 M G Road,NA ,NA 
 New Rohtak Road,NA ,NA 
@@ -411,23 +422,100 @@ Unitech Mall ,NA ,NA
 Uppal Chadha Plum,NA ,NA
 Eta  ,Eta ,Eta 
 Golf course Road,Golf Course Road ,Golf Course Road 
+70 Sector,70,70
 Mg Road Gurgaon,MG Road,MG Road
+37 Sector,37,37
+18 Sector,18,18
 Sushant Lok 2,Sushant Lok 2 ,Sushant Lok 2 
 Sohna road,Sohna Road,Sohna Road
+55 Sector,55,55
+56 Sector,56,56
+34 Sector,34,34
 69 Sector,69,69
+42 Sector,42,42
+26 Sector,26,26
+66 Sector,66,66
+77 Sector,77,77
+14 Sector,14,14
 Golf course Ext. Road,Golf Course Road,Golf Course Road
 DLF 4,Dlf Phase 4,Dlf Phase 4
 Sushant Lok 1,Sushant Lok 1 ,Sushant Lok 1 
+15 Sector,15,15
+31 Sector,31,31
+48 Sector,48,48
+63 Sector,63,63
+61 Sector,61,61
+49 Sector,49,49
+30 Sector,30,30
+50 Sector,50,50
+83 Sector,83,83
+29 Sector,29,29
+47 Sector,47,47
 109 Sector,109,109
+45 Sector,45,45
+54 Sector,54,54
+65 Sector,65,65
+103 Sector,103,103
+67 Sector,67,67
 DLF 1,Dlf Phase 1 ,Dlf Phase 1 
 Dharuhera,Dharuhera,Dharuhera
+32 Sector,32,32
+72 Sector,72,72
+90 Sector,90,90
+88 Sector,88,88
+43 Sector,43,43
+44 Sector,44,44
+22 Sector,22,22
+53 Sector,53,53
+39 Sector,39,39
+46 Sector,46,46
+84 Sector,84,84
+86 Sector,86,86
+81 Sector,81,81
+91 Sector,91,91
+104 Sector,104,104
+74 Sector,74,74
+33 Sector,33,33
+35 Sector,35,35
+62 Sector,62,62
 DLF 3,Dlf Phase 3,Dlf Phase 3
+51 Sector,51,51
+78 Sector,78,78
+28 Sector,28,28
+102 Sector,102,102
+57 Sector,57,57
+71 Sector,71,71
+73 Sector,73,73
+82 Sector,82,82
+40 Sector,40,40
+52 Sector,52,52
+92 Sector,92,92
+38 Sector,38,38
+21 Sector,21,21
+58 Sector,58,58
+17 Sector,17,17
+108 Sector,108,108
+89 Sector,89,89
+25 Sector,25,25
+23 Sector,23,23
+80 Sector,80,80
+79 Sector,79,79
 23A Sector,23A,23A
+27 Sector,27,27
+10 Sector,10,10
+20 Sector,20,20
+107 Sector,107,107
+85 Sector,85,85
+24 Sector,24,24
 DLF II,Dlf Phase 2,Dlf Phase 2
 DLF IV,Dlf Phase 4 ,Dlf Phase 4 
 DLF III,Dlf Phase 3 ,Dlf Phase 3 
 DLF I,Dlf Phase 1,Dlf Phase 1
 RAHEJA ATLANTIS,NA,NA
+56 SECTOR,56,56
+64 Sector,64,64
+41 Sector,41,41
+12 Sector,12,12
 114 Sector,114,114
 DHARUHEDA,Dharuhera ,Dharuhera 
 95 Sector,95,95
@@ -438,6 +526,7 @@ Dlf Phase II,Dlf Phase 2,Dlf Phase 2
 DLF PH III,Dlf Phase 3,Dlf Phase 3
 Sultan Pur,Sultanpur ,Sultanpur 
 Golf Course,Golf Course Road ,Golf Course Road 
+MANESAR SECTOR 1,Manesar Sector 1,Manesar Sector 1
 Phase 1,Dlf Phase 1 ,Dlf Phase 1 
 WELLDONE TECH PARK,NA,NA 
 NIRVANA COUNTRY-1,NA,NA
@@ -447,327 +536,81 @@ VATIKA CITY,NA,NA
 SUSHANT LOK I,Sushant Lok 1 ,Sushant Lok 1 
 BPTP,NA,NA 
 BPTP Spacio,NA,NA
+76 Sector,76,76
+100 Sector,100,100
+11 Sector,11,11
 89A Sector,89 A ,89 A 
+112 Sector,112,112
+102 Sector,102,102
 88A Sector,88 A ,88 A 
 63A Sector,63A,63A
-Radhey Mohan Drive,,
-Dera Mandi,,
-GK1,,
-Kapasera,,
-Saket,,
-East of Kailash,,
-pushpanjali.,,
-Jangpura,,
-Mohan Cooperative,,
-Sunder Nagar,,
-Lajpat nagar -1,,
-Sarvodya Enclave,,
-Okhla ph 2,,
-Nehru Place,,
-Kailash Colony,,
-Maharani Bagh,,
-Kalkaji,,
-Defence Colony,,
-mother terresa,,
-Lajpat nagar -3,,
-Chanakyapuri,,
-Shivalik,,
-Okhla ph 1,,
-Chattarpur,,
-Safdarjung Development Area,,
-Lajpat nagar -2,,
-Asola-2,,
-South Ex 1,,
-Lajpat nagar -4,,
-Sultanpur,,
-C R Park,,
-sarvpriya vihar,,
-Greater Kailash -2,,
-New Friends Colony,,
-hauz khas enclave,,
-Malviya Nagar,,
-Green Park Extn,,
-DLF chattrpur,,
-GREEN PARK MAIN,,
-Kailash Hills,,
-HAUZ KHAS,,
-Jasola,,
-Safdarjung Enclave,,
-Ghitorni,,
-Nev Sarai,,
-South Ex 2,,
-Shanti Niketan,,
-Paschim Marg Vasant Vihar,,
-Okhla ph 3,,
-Sainik Farm,,
-Anand Niketan,,
-Zamrudpur,,
-NIZAMUDDIN WEST,,
-Anand lok,,
-Pamposh Enclave,,
-Gadaipur,,
-Vasant Vihar,,
-Panchsheel Park,,
-G.K ENCL-1,,
-Satbari,,
-Ishwar Nagar,,
-Asola,,
-Uday Park,,
-Sukhdev Vihar,,
-Nehru Enclave,,
-Sarita Vihar,,
-Kalindi Colony,,
-Neeti Bagh,,
-----None----,,
-Vasant kunj,,
-Gulmohar Park,,
-Mayfair Garden,,
-Geetanjali Enclave,,
-Jor Bagh,,
-Hemkunt colony,,
-GREATER KAILASH-4,,
-Kotla,,
-WESTEND,,
-G.K ENCL-2,,
-Panchsheel Enclave,,
-SOAMI NAGAR,,
-NAVJEEVAN VIHAR,,
-Amar Colony,,
-Munirka,,
-Chirag Enclave,,
-Alaknanda,,
-Greater Kailash -3,,
-National Park,,
-Sheikh Sarai 1,,
-Bhati mines,,
-Gulmohar Enclave,,
-friends colony east,,
-NIZAMUDDIN EAST,,
-Padmini Enclave,,
-Sadhna Enclave,,
-Srifort Road,,
-Soam Vihar,,
-Panchsheel,,
-Yusuf Sarai,,
-Barakhamba Road,,
-Golf Link,,
-Chattarpur Enclave,,
-Jaunapur,,
-Lado Sarai,,
-Asiad Village Khel Gaon,,
-Freedom Fiter Enclave,,
-Basant Lok,,
-Sant Nagar,,
-Fatehpur Beri,,
-Western Greens,,
-Siddharth Enclave,,
-Press Enclave,,
-Vasant Enclave,,
-Main Mathura Road,,
-Khanpur,,
-Sheikh Sarai 2,,
-Bhikaji Cama Place,,
-Tuglqabad,,
-Bhogal,,
-Friends Colony West,,
-Adhchini,,
-Govind Puri Extn,,
-Dwarka,,
-Goutam Nagar,,
-Mahipalpur,,
-MG Road,,
-Mehrauli,,
-Ayanagar,,
-Rangpuri,,
-Bijwasan,,
-asiad village,,
-Khan Market,,
-Ashram,,
-Aradhna Enclave,,
-Sahdulla Jab,,
-"Safdarjung Enclave, Jangpura",,
-phase I,,
-Okhla,,
-phase II,,
-DLF,,
-NEW FREINDS COLONY,,
-South Extn,,
-Jangpura Extn,,
-GREEN PARK,,
-Nizamuddin,,
-Jasola Vihar,,
-Greater Kailash,,
-Sai apartments,,
-Andrews Ganj,,
-D L F QUTAB ENC,,
-G.T. road South,,
-Lajpat Nagar,,
-Okhla 3,,
-Masjid Moth,,
-Sajdarjung Development Area,,
-AGRICALTURE LAND,,
-ANY,,
-Badarpur,,
-VASANT MARG,,
-Greater Kailash-2,,
-Tughlakabad,,
-Gautam Nagar,,
-Greater Kailash-1,,
-Lodhi Road,,
-Mandakini Enclave,,
-R K Puram,,
-KOTLA MUBARAK PUR,,
-Amar Colony Lajpat Nagar,,
-Safadarjung Enclave,,
-Safdarjang Enclave,,
-Jang pura B,,
-Connaught Place,,
-Friends Colony,,
-jamia nager,,
-Okhla 2,,
-Sarla Jhab,,
-East Friends Colony,,
-"sant nagar, east of kailash",,
-New Delhi,,
-Janak Puri,,
-Jangpura Bhogal,,
-Kailash Kolony,,
-Safdajung Enclave,,
-Jang pura,,
-jamiya nagar,,
-LAXMI NAGAR,,
-Masoodpur Vasant Kunj,,
-Mahaveer Enclave,,
-TUGHLAKABAD EXT,,
-MAHIPAL PUR,,
-Krishna Market,,
-South Delhi,,
-Palam,,
-Triveni Complex,,
-jamia,,
-Wazir Nagar,,
-Sheikh Sarai,,
-Katwaria Sarai,,
-Huaz Khas,,
-Safadarjung,,
-Niti bagh,,
-East Patel Nagar,,
-Living Style Mall,,
-FARIDABAD,,
-Jang pura Extn,,
-OKHLA -1,,
-Paschim Vihar,,
-okhla ph i,,
-South Ex,,
-Greater Kailash Enclave,,
-Khan Pur,,
-vasat kunj,,
-Greater Kailsh,,
-Greater Kailash 1,,
-Kalka Ji,,
-East Nizamuddin,,
-G.K ENCL-3,,
-Tughlakabad Extn,,
-Pushp Vihar,,
-Kotla Mubarakpur,,
-Jamia Nagar,,
-Sarojni Nagar,,
-kalindi,,
-Gulrnohar Park,,
-Mandi,,
-Shrinivas puri,,
-Deoli,,
-Dera village,,
-shaheen bagh,,
-DLF Qutub Enc,,
-Nehru appartment,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
-,,
+Radhey Mohan Drive,Radhey Mohan Drive,Radhey Mohan Drive
+Dera Mandi,Dera Mandi,Dera Mandi
+GK1,GK1,GK 1
+Kapasera,Kapashera,Kapashera
+Saket,Saket ,Saket 
+East of Kailash,East of Kailash ,East of Kailash 
+Jangpura,Jangpura,Jangpura
+Mohan Cooperative,Mohan Cooperative,Mohan Cooperative
+Sunder Nagar,Sunder Nagar ,Sunder Nagar 
+Lajpat nagar -1,Lajpat Nagar 1,Lajpat Nagar 1
+Sarvodya Enclave,Sarvodaya Enclave,Sarvodaya Enclave
+Okhla ph 2,Okhla Phase 2,Okhla Phase 2
+Nehru Place,Nehru Place ,Nehru Place 
+Kailash Colony,Kailash Colony ,Kailash Colony 
+Maharani Bagh,Maharani Bagh,Maharani Bagh
+Kalkaji,Kalkaji ,Kalkaji 
+Defence Colony,Defence Colony,Defence Colony
+Lajpat nagar -3,Lajpat Nagar 3 ,Lajpat Nagar 3 
+Chanakyapuri,Chanakyapuri ,Chanakyapuri 
+Okhla ph 1,Okhla Phase 1,Okhla Phase 1
+Chattarpur,Chattarpur ,Chattarpur 
+Lajpat nagar -2,Lajpat Nagar 2,Lajpat Nagar 2
+South Ex 1,South Extension 1,South Extension 1
+Lajpat nagar -4,Lajpat Nagar 4,Lajpat Nagar 4
+Sultanpur,Sultanpur ,Sultanpur 
+C R Park,Chittaranjan Park,Chittaranjan Park
+sarvpriya vihar,Sarvapriya Vihar,Sarvapriya Vihar
+Greater Kailash -2,GK 2 ,GK 2 
+New Friends Colony,New Friends Colony ,New Friends Colony 
+hauz khas enclave,Hauz Khas Enclave ,Hauz Khas Enclave 
+Malviya Nagar,Malviya Nagar ,Malviya Nagar 
+Green Park Extn,Green Park Extn,Green Park Extn
+HAUZ KHAS,Hauz Khas,Hauz Khas
+Jasola,jasola ,jasola 
+Safdarjung Enclave,Safdarjung Enclave,Safdarjung Enclave
+Ghitorni,Ghitorni ,Ghitorni 
+South Ex 2,South Extension 2,South Extension 2
+Shanti Niketan,Shanti Niketan ,Shanti Niketan 
+Okhla ph 3,Okhla Phase 3,Okhla Phase 3
+Anand Niketan,Anand Niketan,Anand Niketan
+NIZAMUDDIN WEST,Nizamuddin West,Nizamuddin West
+Anand lok,Anand Lok,Anand Lok
+Pamposh Enclave,Pamposh Enclave ,Pamposh Enclave 
+Gadaipur,Gadaipur,Gadaipur
+Vasant Vihar,Vasant Vihar,Vasant Vihar
+Panchsheel Park,Panchsheel Park ,Panchsheel Park 
+Satbari,Satbari ,Satbari 
+Ishwar Nagar,Ishwar Nagar,Ishwar Nagar
+Asola,Asola ,Asola 
+Uday Park,Uday Park,Uday Park
+Sukhdev Vihar,Sukhdev Vihar,Sukhdev Vihar
+Nehru Enclave,Nehru Enclave,Nehru Enclave
+Sarita Vihar,Sarita Vihar,Sarita Vihar
+Neeti Bagh,Neeti Bagh ,Neeti Bagh 
+Vasant kunj,Vasant Kunj ,Vasant Kunj 
+Gulmohar Park,Gulmohar Park ,Gulmohar Park 
+Geetanjali Enclave,Geetanjali Enclave ,Geetanjali Enclave 
+Jor Bagh,Jor Bagh,Jor Bagh
+Sadhna Enclave,Sadhna Enclave,Sadhna Enclave
+GREEN PARK,Green Park,Green Park
+Greater Kailash,Greater Kailash,Greater Kailash
+Lajpat Nagar,Lajpat Nagar,Lajpat Nagar
+Okhla 3,Okhla Phase 3,Okhla Phase 3
+Greater Kailash-2,Greater Kailash 2,Greater Kailash 2
+Niti bagh,Neeti Bagh ,Neeti Bagh 
+vasat kunj,Vasant Kunj,Vasant Kunj
+East Nizamuddin,Nizamuddin East ,Nizamuddin East 
 ,,
 ,,
 ,,
