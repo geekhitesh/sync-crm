@@ -1,4 +1,4 @@
-Actual SF Location,Derived SF Location,RR Area
+Salesforce Location,Derived SF Location,R-Square Location
 1 Sector,1,1
 10 Sector,10,10
 100 Sector,100,100
@@ -60,7 +60,7 @@ Actual SF Location,Derived SF Location,RR Area
 163 Sector,NA,NA
 164 Sector,NA,NA
 168 Sector,NA,NA
-16A Sector,16A,#N/A
+16A Sector,16A,16A
 16B Sector,16B,16B
 17 Sector,17,17
 17A Sector,NA,NA
@@ -170,6 +170,7 @@ AGRICALTURE LAND,NA,NA
 Alok Vihar-I,NA,NA
 Alok Vihar-II,NA,NA
 AMRAPALI,NA,NA
+NSEZ,Opp to NSEZ,Opp to NSEZ
 "AMRAPALI,Sector 119",NA,NA
 ANSAL FORTUNE ARCADE,NA,NA
 ANY,NA,NA
@@ -189,7 +190,7 @@ Eldeco Utopia,NA,NA
 Expressway,Expressway,Expressway
 FARM LAND,NA,NA
 Green Bay,NA,NA
-Hosiery Complex,Hosiery Complex,hosiery complex
+Hosiery Complex,Hosiery Complex,Hosiery Complex
 Indirapuram,NA,NA
 J.P.Greens,NA,NA
 Jaypee Aman,NA,NA
@@ -212,7 +213,6 @@ noida extinction,Noida Phase 3,Noida Phase 3
 Noida Heights,NA,NA
 ----None----,NA,NA
 NRI Residency YEA,NA,NA
-NSEZ,Opp to NSEZ,Opp to NSEZ
 NULL,NA,NA
 Omaxe,NA,NA
 Omaxe Grandwoods,NA,NA
@@ -244,19 +244,11 @@ UNITECH HEIGHT,NA,NA
 UNITECH MALL,NA,NA
 vivek vihar,NA,NA
 Yamuna Expressway,Yamuna Expressway,Yamuna Expressway
-,,
 EIE,NA ,NA 
 ATS Dolce,NA ,NA 
 Ashiana Orchids,NA ,NA 
 Divine Grace Society ,NA ,NA 
 Omaxe ITC,NA ,NA 
-1 Sector,1,1
-2 Sector,2,2
-3 Sector,3,3
-10 Sector,10,10
-11 Sector,11,11
-36 Sector,36,36
-37 Sector,37,37
 47 Sector,NA,NA
 Alfa,Alfa,Alfa
 Alfa Commercial Belt ,Alfa Commercial Belt ,Alfa Commercial Belt 
@@ -392,7 +384,6 @@ Wegman IT Park,NA,NA
 Xu -1,Xu I ,Xu I 
 Xu -2, Xu 2 , Xu 2 
 Xu -3,Xu III,Xu III
-Yamuna Expressway,Yamuna Expressway,Yamuna Expressway
 Zeta,Zeta,Zeta
 Zeta -2,Zeta 2,Zeta 2
 Pari chowk,Pari Chowk,Pari Chowk
@@ -400,8 +391,6 @@ Vrinda City ,NA,NA
 Unitech Habitat,NA,NA
 N.R.I. City ,Nri City,Nri City
 Icon Apartment ,NA,NA
-Noida Extension,Noida Extension,Noida Extension
-Divine Grace Society ,NA ,NA 
 Building No.-31,NA ,NA 
 M G Road,NA ,NA 
 New Rohtak Road,NA ,NA 
@@ -418,104 +407,27 @@ Gama 2,Gama 2,Gama 2
 16c Sector ,NA,NA
 37 Sector ,37,37
 2 Sector ,2,2
-Unitech Mall ,NA ,NA
-Uppal Chadha Plum,NA ,NA
+Unitech Mall ,NA ,NA 
+Uppal Chadha Plum,NA ,NA 
 Eta  ,Eta ,Eta 
 Golf course Road,Golf Course Road ,Golf Course Road 
-70 Sector,70,70
 Mg Road Gurgaon,MG Road,MG Road
-37 Sector,37,37
-18 Sector,18,18
 Sushant Lok 2,Sushant Lok 2 ,Sushant Lok 2 
 Sohna road,Sohna Road,Sohna Road
-55 Sector,55,55
-56 Sector,56,56
-34 Sector,34,34
 69 Sector,69,69
-42 Sector,42,42
-26 Sector,26,26
-66 Sector,66,66
-77 Sector,77,77
-14 Sector,14,14
 Golf course Ext. Road,Golf Course Road,Golf Course Road
 DLF 4,Dlf Phase 4,Dlf Phase 4
 Sushant Lok 1,Sushant Lok 1 ,Sushant Lok 1 
-15 Sector,15,15
-31 Sector,31,31
-48 Sector,48,48
-63 Sector,63,63
-61 Sector,61,61
-49 Sector,49,49
-30 Sector,30,30
-50 Sector,50,50
-83 Sector,83,83
-29 Sector,29,29
-47 Sector,47,47
 109 Sector,109,109
-45 Sector,45,45
-54 Sector,54,54
-65 Sector,65,65
-103 Sector,103,103
-67 Sector,67,67
 DLF 1,Dlf Phase 1 ,Dlf Phase 1 
 Dharuhera,Dharuhera,Dharuhera
-32 Sector,32,32
-72 Sector,72,72
-90 Sector,90,90
-88 Sector,88,88
-43 Sector,43,43
-44 Sector,44,44
-22 Sector,22,22
-53 Sector,53,53
-39 Sector,39,39
-46 Sector,46,46
-84 Sector,84,84
-86 Sector,86,86
-81 Sector,81,81
-91 Sector,91,91
-104 Sector,104,104
-74 Sector,74,74
-33 Sector,33,33
-35 Sector,35,35
-62 Sector,62,62
 DLF 3,Dlf Phase 3,Dlf Phase 3
-51 Sector,51,51
-78 Sector,78,78
-28 Sector,28,28
-102 Sector,102,102
-57 Sector,57,57
-71 Sector,71,71
-73 Sector,73,73
-82 Sector,82,82
-40 Sector,40,40
-52 Sector,52,52
-92 Sector,92,92
-38 Sector,38,38
-21 Sector,21,21
-58 Sector,58,58
-17 Sector,17,17
-108 Sector,108,108
-89 Sector,89,89
-25 Sector,25,25
-23 Sector,23,23
-80 Sector,80,80
-79 Sector,79,79
 23A Sector,23A,23A
-27 Sector,27,27
-10 Sector,10,10
-20 Sector,20,20
-107 Sector,107,107
-85 Sector,85,85
-24 Sector,24,24
 DLF II,Dlf Phase 2,Dlf Phase 2
 DLF IV,Dlf Phase 4 ,Dlf Phase 4 
 DLF III,Dlf Phase 3 ,Dlf Phase 3 
 DLF I,Dlf Phase 1,Dlf Phase 1
 RAHEJA ATLANTIS,NA,NA
-56 SECTOR,56,56
-64 Sector,64,64
-41 Sector,41,41
-12 Sector,12,12
 114 Sector,114,114
 DHARUHEDA,Dharuhera ,Dharuhera 
 95 Sector,95,95
@@ -526,27 +438,21 @@ Dlf Phase II,Dlf Phase 2,Dlf Phase 2
 DLF PH III,Dlf Phase 3,Dlf Phase 3
 Sultan Pur,Sultanpur ,Sultanpur 
 Golf Course,Golf Course Road ,Golf Course Road 
-MANESAR SECTOR 1,Manesar Sector 1,Manesar Sector 1
 Phase 1,Dlf Phase 1 ,Dlf Phase 1 
-WELLDONE TECH PARK,NA,NA 
+WELLDONE TECH PARK,NA,NA
 NIRVANA COUNTRY-1,NA,NA
 Orris,NA,NA
 17A Sector,17A ,17A 
-VATIKA CITY,NA,NA 
+VATIKA CITY,NA,NA
 SUSHANT LOK I,Sushant Lok 1 ,Sushant Lok 1 
-BPTP,NA,NA 
+BPTP,NA,NA
 BPTP Spacio,NA,NA
-76 Sector,76,76
-100 Sector,100,100
-11 Sector,11,11
 89A Sector,89 A ,89 A 
-112 Sector,112,112
-102 Sector,102,102
 88A Sector,88 A ,88 A 
 63A Sector,63A,63A
 Radhey Mohan Drive,Radhey Mohan Drive,Radhey Mohan Drive
 Dera Mandi,Dera Mandi,Dera Mandi
-GK1,GK1,GK 1
+GK1,GK1,GK1
 Kapasera,Kapashera,Kapashera
 Saket,Saket ,Saket 
 East of Kailash,East of Kailash ,East of Kailash 
@@ -610,10 +516,4 @@ Okhla 3,Okhla Phase 3,Okhla Phase 3
 Greater Kailash-2,Greater Kailash 2,Greater Kailash 2
 Niti bagh,Neeti Bagh ,Neeti Bagh 
 vasat kunj,Vasant Kunj,Vasant Kunj
-East Nizamuddin,Nizamuddin East ,Nizamuddin East 
-,,
-,,
-,,
-,,
-,,
-,,
+East Nizamuddin,Nizamuddin East ,Nizamuddin East

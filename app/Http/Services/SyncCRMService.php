@@ -33,6 +33,7 @@ Class SyncCRMService{
     private $mapped_property_type_list;
     private $mapped_property_sub_type_list;
     private $stats;
+    private $error_description;
 
     public function __construct()
     {
@@ -42,8 +43,8 @@ Class SyncCRMService{
        $this->mapped_property_type_list     = json_decode($this->convertCSVToJSON('property_type_list.csv'),TRUE);
        $this->mapped_property_sub_type_list = json_decode($this->convertCSVToJSON('property_sub_type_list.csv'),TRUE);
        $this->mapped_property_type_sub_type_list = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
-       //$this->__debug($this->mapped_area_list);
-       //$this->__debug($this->mapped_property_sub_type_list);
+       //$this->debug($this->mapped_area_list);
+       //$this->debug($this->mapped_property_sub_type_list);
        $this->stats = array();
        $this->stats['insert']['success']= 0;
        $this->stats['delete']['success'] = 0;
@@ -63,9 +64,9 @@ Class SyncCRMService{
        $this->property_sub_type_list = $this->property_filter_data['propertySubTypes'];
        $this->city_list = $this->property_filter_data['cities'];
        $this->convertAttributeListToKeys();
-       //$this->__debug($this->property_type_list);
-       //$this->__debug($this->city_list);
-       //$this->__debug($this->property_sub_type_list);
+       //$this->debug($this->property_type_list);
+       //$this->debug($this->city_list);
+       //$this->debug($this->property_sub_type_list);
     }
 
     private function convertAttributeListToKeys()
@@ -125,14 +126,14 @@ Class SyncCRMService{
        $area_list = $area_list['localities'];
        $area_array =array();
        //$this->area_list[$city_id] = json_decode($response->getBody(),true);
-       //$this->__debug($area_list);
+       //$this->debug($area_list);
        foreach ($area_list as $area)
        {
           $area_array[str_ireplace("Sector ","",$area['areaName'])] = $area;  
 
        }
        $this->area_list[$city_id] = $area_array;
-       //$this->__debug($this->area_list);
+       //$this->debug($this->area_list);
     }
 
     function is_assoc($arr)
@@ -142,11 +143,12 @@ Class SyncCRMService{
 
     public function syncProperties($records)
     {
-        //$this->__debug($this->mapped_city_list);
+        //$this->debug($this->mapped_city_list);
         foreach($records as $record)
         {
             $decoded_string = "";
             $this->request_status = "C";
+            $this->error_description = "";
             //echo $record->request_input."<br/>";
             $request = json_decode($record->request_input,TRUE); 
             $associative_array = $this->is_assoc($request['Body']['notifications']['Notification']);
@@ -211,9 +213,10 @@ Class SyncCRMService{
             }
            $record->decoded_string = $decoded_string;
            $record->request_status = $this->request_status;
+           $record->error_description = $this->error_description;
            $record->save(); 
         }         
-        $this->__debug($this->stats);
+        $this->debug($this->stats);
     }
 
     private function parseRequest($request)
@@ -293,15 +296,16 @@ Class SyncCRMService{
             //echo $this->city_id."<br/>"; 
             //$this->getAreaList($this->city_id);
             //$this->area = str_replace("Sector","",$this->area);
+
+            if(! isset($this->area_list[$this->city_id]))
+              {
+                   $this->getAreaList($this->city_id);
+                   //print_r($this->area_list);
+            }
+
             if (isset($this->mapped_area_list[$this->area][1]))
             {
                 $this->area = $this->mapped_area_list[$this->area][1];
-            
-                if(! isset($this->area_list[$this->city_id]))
-                {
-                   $this->getAreaList($this->city_id);
-                   //print_r($this->area_list);
-                }
             
                 if($this->area != "NA")
                 {
@@ -309,19 +313,31 @@ Class SyncCRMService{
                 }
                 else
                 {
+                    $this->error_description .= "File Mapping: Area <".$this->area_id."> not found in R-Square<br/>";
                     $status = false;
                 }
                 $echo_string .= "<br/>City Name:".$this->city."; City Id:".$this->city_id."; Area Name:".$this->area. "; Area Id:".$this->area_id;
             }
+            else if(isset($this->area_list[$this->city_id][$this->area]['areaName']))
+            {
+              $this->debug("Area not found in mapping file but is directly found in r-square");
+              $this->area_id = $this->area_list[$this->city_id][$this->area]['areaID'];
+              $echo_string .= "<br/>City Name:".$this->city."; City Id:".$this->city_id."; Area Name:".$this->area. "; Area Id:".$this->area_id;
+            }
             else
             {
-                $status = false; 
-
+                $this->debug("City:".$this->city_id);
+                //$this->debug("City: ".$this->area_list[$this->city_id]);
+                //$this->debug($this->area_list);
+                //$this->debug("Area: ".$this->area);
+                $status = false;
+                $this->error_description .= "Direct Mapping: Area <".$this->area."> not found in R-Square.<br/>";
             }    
           }
           else
           {
              $status = false;
+             $this->error_description .= "File Mapping: City <".$this->city."> not found in R-Square.<br/>";
           }
 
           /***********************************************************************************
@@ -348,6 +364,7 @@ Class SyncCRMService{
               else
               {
                   $status = false;
+                   $this->error_description .= "File Mapping: Property Type <".$this->property_type."> not found in R-Square.<br/>";
               }
               
               if(isset($this->mapped_property_type_sub_type_list[$this->property_type][2]))
@@ -357,6 +374,7 @@ Class SyncCRMService{
               else
               {
                   $status = false;
+                   $this->error_description .= "File Mapping: Property Sub Type <".$this->property_sub_type."> not found in R-Square.<br/>";
               }
 
           }
@@ -369,6 +387,7 @@ Class SyncCRMService{
               else
               {
                   $status = false;
+                   $this->error_description .= "File Mapping: Property Type <".$this->property_type."> not found in R-Square.<br/>";
               }
               if(isset($this->mapped_property_type_sub_type_list[$this->property_sub_type][2]))
               {
@@ -377,6 +396,7 @@ Class SyncCRMService{
               else
               {
                   $status = false;
+                  $this->error_description .= "File Mapping: Property Sub Type <".$this->property_sub_type."> not found in R-Square.<br/>";
               }
           }
 
@@ -417,12 +437,14 @@ Class SyncCRMService{
             $echo_string .= "; Parsing Status: Failed";
             $this->stats[strtolower($this->request_type)]['failed']++;
             $this->request_status = 'E';
+            $this->debug($this->error_description);
         }
         else
         {
              $echo_string .= "; Parsing Status: Passed";
+            
         }
-       echo "<hr/>".$echo_string; 
+       $this->debug("<hr/>".$echo_string); 
        return $echo_string;       
     }
 
@@ -480,15 +502,17 @@ Class SyncCRMService{
     } 
 
 
-    public function __debug($val)
+    public function debug($val)
     {
         if( env('DEBUG'))
         {
+          echo "<br/>";
           if(is_array($val))
             var_dump($val);
           else
             echo "<br/>$val";
-        }
 
+        }
     }  
+
 } 
