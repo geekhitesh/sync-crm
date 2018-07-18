@@ -514,7 +514,7 @@ Class SyncCRMService{
  
     private function insertProperty()
     {
-        $website_id = '201502061022_WS_1';
+        $website_id = env('WEBSITE_ID');
         $client = new \GuzzleHttp\Client(); 
         //$query_String = "name=Salesforce Admin&email=crmsupport@buniyad.com&phone=9927701230&txnType=Buy&type=residential&subType=Apartment&city=385818457719445047&area=467876444116787557&comments=Property-1234";
         $endpoint       = "http://www.buniyad.com/postPropertyData?".
