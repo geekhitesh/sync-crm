@@ -6,6 +6,7 @@ use \Cache;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use DB;
+use AreaUnit;
 
 Class SyncCRMService{
 
@@ -21,6 +22,7 @@ Class SyncCRMService{
     private $no_of_bedrooms;
     private $no_of_bathrooms;
     private $saleable_area;
+    private $saleable_area_in_sqft;
     private $property_filter_data;
     private $area_list;
     private $property_type_list;
@@ -34,15 +36,18 @@ Class SyncCRMService{
     private $mapped_property_sub_type_list;
     private $stats;
     private $error_description;
+    private $price;
+    private $saleable_area_unit;
 
     public function __construct()
     {
        $this->postPropertyFilterData();
-       $this->mapped_city_list              = json_decode($this->convertCSVToJSON('city_list.csv'),TRUE);
-       $this->mapped_area_list              = json_decode($this->convertCSVToJSON('area_list.csv'),TRUE);
-       $this->mapped_property_type_list     = json_decode($this->convertCSVToJSON('property_type_list.csv'),TRUE);
-       $this->mapped_property_sub_type_list = json_decode($this->convertCSVToJSON('property_sub_type_list.csv'),TRUE);
-       $this->mapped_property_type_sub_type_list = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
+       $this->mapped_city_list                    = json_decode($this->convertCSVToJSON('city_list.csv'),TRUE);
+       $this->mapped_area_list                    = json_decode($this->convertCSVToJSON('area_list.csv'),TRUE);
+       $this->mapped_area_unit_list               = json_decode($this->convertCSVToJSON('area_unit_list.csv'),TRUE);
+       $this->mapped_property_type_list           = json_decode($this->convertCSVToJSON('property_type_list.csv'),TRUE);
+       $this->mapped_property_sub_type_list       = json_decode($this->convertCSVToJSON('property_sub_type_list.csv'),TRUE);
+       $this->mapped_property_type_sub_type_list  = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
        //$this->debug($this->mapped_area_list);
        //$this->debug($this->mapped_property_sub_type_list);
        $this->stats = array();
@@ -166,7 +171,7 @@ Class SyncCRMService{
                       *   Call this function to parse the request.
                       *   Extract the Property Ffields from original request.
                       *******************************************************/
-
+                      $this->debug($request);
                       $this->parseRequest($request);
 
 
@@ -197,8 +202,10 @@ Class SyncCRMService{
                 else
                 {
                     $request = $request['Body']['notifications']['Notification']['sObject'];
+                    $this->debug($request);
                     $this->parseRequest($request);
                     $decoded_string .= $this->attributeMapper();
+                    $this->request_type= "INSERT";
                     if($this->request_type == "INSERT")
                     {
                         $this->insertProperty();
@@ -216,12 +223,13 @@ Class SyncCRMService{
            $record->error_description = $this->error_description;
            $record->save(); 
         }         
-        $this->debug($this->stats);
+        //$this->debug($this->stats);
+        $this->displayStatistics();
     }
 
     private function parseRequest($request)
     {
-
+       $this->saleable_area = 0;
        $this->availability_name = $request['Name'];
        $this->city = $request['RealtyForce__City__c'];
        if(isset($request['RealtyForce__Location__c']))
@@ -262,15 +270,49 @@ Class SyncCRMService{
            $this->no_of_bedrooms = 0;
        } 
 
+       if(isset($request['RealtyForce__Plot_Area__c']))
+       {
+           $this->saleable_area = $request['RealtyForce__Plot_Area__c'];
+       }
+
        if(isset($request['RealtyForce__Covered_Area__c']))
        {
+           
            $this->saleable_area = $request['RealtyForce__Covered_Area__c'];
+       }
+
+
+       if(isset($request['RealtyForce__Max_Covered_Area__c']))
+       {
+           $this->saleable_area = $request['RealtyForce__Max_Covered_Area__c'];
+       }
+
+       if(isset($request['RealtyForce__Min_Covered_Area__c']))
+       {
+           $this->saleable_area = $request['RealtyForce__Min_Covered_Area__c'];
+       }   
+
+       if(isset($request['RealtyForce__Budget_Price__c']))
+       {
+           $this->price = $request['RealtyForce__Budget_Price__c'];
        }
        else
        {
-           $this->saleable_area = 0;
+           $this->price = 0;
        }
+
+       //RealtyForce__Project_Area__c
+
+       if(isset($request['RealtyForce__Project_Area__c']))
+       {
+           $this->saleable_area_unit = $request['RealtyForce__Project_Area__c'];
+       }
+       else
+       {
+           $this->saleable_area_unit = '';
+       }       
           
+
        $records = DB::select('select count(1) as total_count from v_rr_property where comments = ?',[$this->availability_name]); 
        if($records[0]->total_count <=0)
        {
@@ -422,6 +464,27 @@ Class SyncCRMService{
               $status = false;
           }
 
+
+          if(isset($this->mapped_area_unit_list[$this->saleable_area_unit]))
+          {
+              $this->saleable_area_unit = $this->mapped_area_unit_list[$this->saleable_area_unit][1];
+              $this->saleable_area_in_sqft = AreaUnit::convertToSqft($this->saleable_area_unit,$this->saleable_area);
+              $echo_string .= ";Area in salesforce: ".$this->saleable_area." ".$this->saleable_area_unit." and Converted Area: ".$this->saleable_area_in_sqft." sqft.";
+          }
+          else
+          {
+              $status = false;
+              $this->error_description .= "File Mapping: Area Unit <".$this->saleable_area_unit."> not found in R-Square.<br/>";        
+          }
+
+          if($this->share_to_website == true) {
+              $this->share_to_website = 'Yes';
+          }
+          else {
+              $this->share_to_website = 'No';
+          }
+
+
           $echo_string .= "; Property Sub Type ID:".$this->property_sub_type;
           $echo_string .= "; Avaiability Id:".$this->availability_name;
           $echo_string .= "; Share To Website:".$this->share_to_website;
@@ -436,7 +499,7 @@ Class SyncCRMService{
         {
             $echo_string .= "; Parsing Status: Failed";
             $this->stats[strtolower($this->request_type)]['failed']++;
-            $this->request_status = 'E';
+            $this->request_status = 'P';
             $this->debug($this->error_description);
         }
         else
@@ -463,6 +526,7 @@ Class SyncCRMService{
                         "&size=".$this->saleable_area.
                         "&bedrooms=".$this->no_of_bedrooms. 
                         "&comments=".$this->availability_name.
+                        "&price=".$this->price.
                         "&website_id=".$website_id.
                         "&phone=9927701230".
                         "&email=crm@buniyad.com"; 
@@ -475,14 +539,17 @@ Class SyncCRMService{
         if($result == "success")
         {
            $this->stats['insert']['success']++;
-           if($this->share_to_website == true)
+          /* if($this->share_to_website == true)
            {
                $this->shareToWebsite('Yes',$this->availability_name);
            }
            else
            {
                $this->shareToWebsite('No',$this->availability_name);
-           }
+           } */
+
+           $this->debug('Insert Sucessful: Performing Post Insert');
+           $this->postInsertProcessing();
         }
         else
         {
@@ -501,18 +568,103 @@ Class SyncCRMService{
         $result = DB::update("update v_rr_property set push_to_website=? where Comments like 'P-%' and Comments=?",[$share,$availability_name]);
     } 
 
+    /**********************************************************************
+    *This function handles the tasks needs to be done after insertion of 
+    * property in R-Square.
+    * 1) Update Amenities
+    * 2) Update Area
+    * 3) Update Price
+    * 4) 
+    ***********************************************************************/
+    private function postInsertProcessing()
+    {
+        $native_total_area = $this->saleable_area;
+        $abr_nta = $this->saleable_area_unit;
+        $unit_of_nta = AreaUnit::unitFormula($this->saleable_area_unit);
+        $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
+        $property_name = $this->getPropertyName($vrr_property_details);
+        $prp_website_title = $this->getPropertyTitle($vrr_property_details);
+        $share_to_website = $this->share_to_website;
+
+
+        $result = DB::update("UPDATE v_rr_property 
+                              SET    push_to_website=?,
+                                     native_total_area = ?,
+                                     unit_of_nta = ?,
+                                     abr_nta = ?,
+                                     property_name = ?,
+                                     prp_website_title = ?
+                              WHERE  Comments like 'P-%' and Comments=?",[$share_to_website,
+                                                                          $native_total_area,
+                                                                          $unit_of_nta,
+                                                                          $abr_nta,
+                                                                          $property_name,
+                                                                          $prp_website_title,
+                                                                          $this->availability_name]
+                            );
+    }
+
 
     public function debug($val)
     {
         if( env('DEBUG'))
         {
           echo "<br/>";
-          if(is_array($val))
+          if(is_array($val) || is_object($val))
             var_dump($val);
           else
             echo "<br/>$val";
 
         }
     }  
+
+
+    private function getPropertyName($property_record)
+    {
+      // $property_name = "Office Space 1474.0 Sq Ft"
+      //"Industrial Building/Factory 550.0 Sq Mt";
+
+      //$property_name = $this->property_sub_type." ".$this->saleable_area;
+     // $this->debug($property_record);
+      $property_name = $property_record->property_name;
+      $property_name = str_replace($this->saleable_area_in_sqft, $this->saleable_area, $property_name);
+      $property_name = str_replace("Sq Ft", $this->saleable_area_unit, $property_name);
+
+      return $property_name;
+    }
+
+    private function getPropertyTitle($property_record)
+    {
+      //Office Space of 1474.0 Sq Ft.  for sale, INR 1.77 Cr at Central Noida, Noida
+      //Industrial Building/Factory of 550.0 Sq Mt.  at Surajpur Site 4, Greater Noida
+      //$property_title = $this->property_sub_type." of ".$this->saleable_area." at ".$this->area.", ".$this->city;
+
+      $property_title = $property_record->prp_website_title;
+      $property_title = str_replace($this->saleable_area_in_sqft, $this->saleable_area, $property_title);
+      $property_title = str_replace("Sq Ft", $this->saleable_area_unit, $property_title);
+
+      return $property_title;
+
+    }
+
+    private function getVRRPropertyDetails()
+    {
+     
+        $records = DB::select('select property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
+        return $records[0];
+
+    }
+
+    private function displayStatistics()
+    {
+      echo "<hr/>*************************************************Statistics of Sync Process***********************************************************************<hr/>";
+      echo "<br/><b>Insert Successful:</b>".$this->stats['insert']['success'];
+      echo "<br/><b>Insert Failed:</b>".$this->stats['insert']['failed'];
+      echo "<br/><b>Update Successful:</b>".$this->stats['update']['success'];
+      echo "<br/><b>Update Failed:</b>".$this->stats['update']['failed'];
+      echo "<br/><b>Delete Successful:</b>".$this->stats['delete']['success'];
+      echo "<br/><b>Delete Failed:</b>".$this->stats['delete']['failed'];
+      echo "<hr/>";
+    }
 
 } 
