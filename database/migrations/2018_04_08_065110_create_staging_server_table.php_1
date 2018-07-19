@@ -15,7 +15,7 @@ class CreateStagingServerTable extends Migration
         //
         Schema::create('staging_server', function (Blueprint $table) {
             $table->increments('request_id');
-            $table->json('request_input');
+            $table->string('request_input');
             $table->string('request_status');
             $table->timestamps();
         });

@@ -7,6 +7,7 @@ use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;
 use DB;
 use AreaUnit;
+use App\SyncProcess;
 
 Class SyncCRMService{
 
@@ -38,6 +39,7 @@ Class SyncCRMService{
     private $error_description;
     private $price;
     private $saleable_area_unit;
+    private $sync_process;
 
     public function __construct()
     {
@@ -57,6 +59,10 @@ Class SyncCRMService{
        $this->stats['insert']['failed']= 0;
        $this->stats['delete']['failed'] = 0;
        $this->stats['update']['failed'] = 0;
+
+       $this->sync_process = new SyncProcess();
+
+       $this->sync_process->save();
 
     }
 
@@ -221,6 +227,7 @@ Class SyncCRMService{
            $record->decoded_string = $decoded_string;
            $record->request_status = $this->request_status;
            $record->error_description = $this->error_description;
+           $record->sync_process_id = $this->sync_process->id;
            $record->save(); 
         }         
         //$this->debug($this->stats);
@@ -560,6 +567,32 @@ Class SyncCRMService{
 
     private function updateProperty()
     {
+
+        /*$native_total_area = $this->saleable_area;
+        $abr_nta = $this->saleable_area_unit;
+        $unit_of_nta = AreaUnit::unitFormula($this->saleable_area_unit);
+        $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
+        $property_name = $this->getPropertyName($vrr_property_details);
+        $prp_website_title = $this->getPropertyTitle($vrr_property_details);
+        $share_to_website = $this->share_to_website;
+
+
+        $result = DB::update("UPDATE v_rr_property 
+                              SET    push_to_website=?,
+                                     native_total_area = ?,
+                                     unit_of_nta = ?,
+                                     abr_nta = ?,
+                                     property_name = ?,
+                                     prp_website_title = ?
+                              WHERE  Comments like 'P-%' and Comments=?",[$share_to_website,
+                                                                          $native_total_area,
+                                                                          $unit_of_nta,
+                                                                          $abr_nta,
+                                                                          $property_name,
+                                                                          $prp_website_title,
+                                                                          $this->availability_name]
+                            );*/
+
         $this->stats['update']['success']++;
     }
 
@@ -614,7 +647,6 @@ Class SyncCRMService{
             var_dump($val);
           else
             echo "<br/>$val";
-
         }
     }  
 
@@ -644,7 +676,6 @@ Class SyncCRMService{
       $property_title = str_replace("Sq Ft", $this->saleable_area_unit, $property_title);
 
       return $property_title;
-
     }
 
     private function getVRRPropertyDetails()
@@ -652,7 +683,6 @@ Class SyncCRMService{
      
         $records = DB::select('select property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
         return $records[0];
-
     }
 
     private function displayStatistics()
@@ -664,7 +694,25 @@ Class SyncCRMService{
       echo "<br/><b>Update Failed:</b>".$this->stats['update']['failed'];
       echo "<br/><b>Delete Successful:</b>".$this->stats['delete']['success'];
       echo "<br/><b>Delete Failed:</b>".$this->stats['delete']['failed'];
+      $total_records = $this->stats['insert']['success'] + 
+                       $this->stats['insert']['failed'] + 
+                       $this->stats['update']['success'] +
+                       $this->stats['update']['failed'] +
+                       $this->stats['delete']['success'] +
+                       $this->stats['delete']['failed'];
+      echo "<br/><b>Total Records Processed:</b> ".$total_records;                 
       echo "<hr/>";
+
+
+      $this->sync_process->insert_success_count = $this->stats['insert']['success'];
+      $this->sync_process->update_success_count = $this->stats['update']['success'];
+      $this->sync_process->delete_success_count = $this->stats['delete']['success'];
+      $this->sync_process->delete_failed_count = $this->stats['delete']['failed'];
+      $this->sync_process->update_failed_count = $this->stats['update']['failed'];
+      $this->sync_process->insert_failed_count = $this->stats['insert']['failed'];
+      $this->sync_process->total_records_processed = $total_records;
+
+      $this->sync_process->save();
     }
 
 } 
