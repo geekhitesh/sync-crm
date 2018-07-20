@@ -299,7 +299,10 @@ Class SyncCRMService{
        if(isset($request['RealtyForce__Min_Covered_Area__c']))
        {
            $this->saleable_area = $request['RealtyForce__Min_Covered_Area__c'];
-       }   
+       }  
+
+        //convert saleable area in .0
+        $this->saleable_area = intval($this->saleable_area);
 
        if(isset($request['RealtyForce__Budget_Price__c']))
        {
