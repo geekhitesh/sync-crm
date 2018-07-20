@@ -725,7 +725,7 @@ Class SyncCRMService{
       $total_area = $property_record->native_total_area;
       $property_title = $property_record->prp_website_title;
       $property_title = str_replace($total_area, $this->saleable_area, $property_title);
-      $current_abr_nta = $property->abr_nta;
+      $current_abr_nta = $property_record->abr_nta;
       $property_title = str_replace($current_abr_nta, $this->saleable_area_unit, $property_title);
       $price_to_replace = $this->readablePrice($property_record->cost);
       $price_replace_with = $this->readablePrice($this->price);
