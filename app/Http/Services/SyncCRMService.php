@@ -584,13 +584,11 @@ Class SyncCRMService{
         $unit_of_nta = AreaUnit::unitFormula($this->saleable_area_unit);
 
         $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
-        if(isset($vrr_property_details))
-        {
-          $vrr_property_details = $vrr_property_details[0];
-          $property_name = $this->getPropertyName($vrr_property_details);
-          $prp_website_title = $this->getPropertyTitle($vrr_property_details);
-          $share_to_website = $this->share_to_website;
-        }
+       // $vrr_property_details = $vrr_property_details[0];
+        $property_name = $this->getPropertyName($vrr_property_details);
+        $prp_website_title = $this->getPropertyTitle($vrr_property_details);
+        $share_to_website = $this->share_to_website;
+
 
 
         /****************************************************************************
@@ -723,7 +721,7 @@ Class SyncCRMService{
     {
      
         $records = DB::select('select native_total_area,total_area,property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
-        return $records;
+        return $records[0];
     }
 
     private function displayStatistics()
