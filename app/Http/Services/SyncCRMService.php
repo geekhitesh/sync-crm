@@ -711,8 +711,11 @@ Class SyncCRMService{
      // $this->debug($property_record);
       $property_name = $property_record->property_name;
       $total_area = $property_record->native_total_area;
+      $price_to_replace = $this->readablePrice($property_record->cost);
+      $price_replace_with = $this->readablePrice($this->price);
+      $current_abr_nta = $property_record->abr_nta;
       $property_name = str_replace($total_area, $this->saleable_area, $property_name);
-      $property_name = str_replace("Sq Ft", $this->saleable_area_unit, $property_name);
+      $property_name = str_replace($current_abr_nta, $this->saleable_area_unit, $property_name);
 
       return $property_name;
     }
