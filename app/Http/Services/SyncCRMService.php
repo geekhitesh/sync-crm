@@ -182,12 +182,17 @@ Class SyncCRMService{
                       $this->debug($request);
                       $this->parseRequest($request);
 
-
+                      /******************************************************
+                      *   Call this function to validate the request.
+                      *
+                      *******************************************************/
+                      $this->validateRequest();
 
                       /******************************************************
                       *   Call this function to map values of salesforce fields 
                       *   to the R-Square Fields. This is the most important function. 
                       *******************************************************/
+
 
                       $decoded_string .=  $this->attributeMapper();
 
@@ -214,11 +219,12 @@ Class SyncCRMService{
                     $this->parseRequest($request);
                     $decoded_string .= $this->attributeMapper();
                     //$this->request_type= "INSERT";
-                    if($this->request_type == "INSERT")
+                    $this->validateRequest();
+                    if($this->request_type == "INSERT" && $this->request_status <> 'E')
                     {
                         $this->insertProperty();
                     }
-                    else if($this->request_type == "UPDATE")
+                    else if($this->request_type == "UPDATE" && $this->request_status <> 'E')
                     {
                         $this->updateProperty();
                     }
@@ -335,6 +341,13 @@ Class SyncCRMService{
            $this->request_type = 'UPDATE';
        }
     }
+
+
+    private function validateRequest()
+    {
+
+
+    }
   
     private function attributeMapper()
     {
@@ -352,7 +365,7 @@ Class SyncCRMService{
             //$this->area = str_replace("Sector","",$this->area);
 
             if(! isset($this->area_list[$this->city_id]))
-              {
+            {
                    $this->getAreaList($this->city_id);
                    //print_r($this->area_list);
             }
@@ -511,7 +524,7 @@ Class SyncCRMService{
         {
             $echo_string .= "; Parsing Status: Failed";
             $this->stats[strtolower($this->request_type)]['failed']++;
-            $this->request_status = 'P';
+            $this->request_status = 'E';
             $this->debug($this->error_description);
         }
         else
@@ -713,14 +726,38 @@ Class SyncCRMService{
       $property_title = $property_record->prp_website_title;
       $property_title = str_replace($total_area, $this->saleable_area, $property_title);
       $property_title = str_replace("Sq Ft", $this->saleable_area_unit, $property_title);
+      $price_to_replace = $this->readablePrice($property_record->cost);
+      $price_replace_with = $this->readablePrice($this->price);
+      $property_title = str_replace($price_to_replace, $price_replace_with, $property_title);
 
       return $property_title;
+    }
+
+
+    private function readablePrice($price)
+    {
+
+          if($price >=1000 && $price <= 99999)
+          {
+            $revised_price = $price / 1000;
+            return "$revised_price Th";
+          }
+          else if($price >=100000 && $price <= 9999999)
+          {
+            $revised_price = $price / 100000;
+            return "$revised_price Lac";
+          }
+          else if($price >= 10000000)
+          {
+            $revised_price = $price / 10000000;
+            return "$revised_price Cr";
+          }
     }
 
     private function getVRRPropertyDetails()
     {
      
-        $records = DB::select('select native_total_area,total_area,property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
+        $records = DB::select('select native_total_area,total_area,property_name,prp_website_title,cost from v_rr_property where comments = ?',[$this->availability_name]); 
         return $records[0];
     }
 

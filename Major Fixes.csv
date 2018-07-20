@@ -1,12 +1,12 @@
-Issues / Enhancement
-
-
-Price in PRP_WEBSITE_TITLE - How to change once price are getting revised,defect,1
-Area is getting converted into 0.0,defect,1
-Add images directly from Salesforce,enhancement,1
-Add amenities from salesforce,enhancement,1
-Add Builder from salesforce, enhancement,1
-Add Project from salesforce,enhancement,1
-Add Property Description from salesforce,enhancement,1
-Only Size/Price getting updated from salesforce,defect,1
-Check if unit is missing,defect,1
+Issues / Enhancement,Type,Priority,Status
+Price in PRP_WEBSITE_TITLE - How to change once price are getting revised because price is shown in CR/Lakh,defect,1,
+Area is getting converted into 0.0,defect,1,Fixed
+Add images directly from Salesforce,enhancement,1,
+Add amenities from salesforce,enhancement,1,
+Add Builder from salesforce, enhancement,1,
+Add Project from salesforce,enhancement,1,
+Add Property Description from salesforce,enhancement,1,
+Add floor froms salesforce,defect,1,
+Only Size/Price getting updated from salesforce,enhancement,1,
+Check if unit is missing,defect,1,
+Salesforce Performing Retries,defect,1,
