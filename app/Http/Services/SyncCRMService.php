@@ -14,6 +14,8 @@ Class SyncCRMService{
     private $availability_name;
     private $property_type;
     private $property_sub_type;
+    private $property_type_id;
+    private $property_sub_type_id;
     private $city;
     private $area;
     private $request_type;
@@ -211,7 +213,7 @@ Class SyncCRMService{
                     $this->debug($request);
                     $this->parseRequest($request);
                     $decoded_string .= $this->attributeMapper();
-                    $this->request_type= "INSERT";
+                    //$this->request_type= "INSERT";
                     if($this->request_type == "INSERT")
                     {
                         $this->insertProperty();
@@ -454,17 +456,17 @@ Class SyncCRMService{
           $echo_string .= "; Property Sub Type:".$this->property_sub_type; 
           if(isset($this->property_type_list[$this->property_type]['rowID']))
           {
-             $this->property_type = $this->property_type_list[$this->property_type]['rowID'];
+             $this->property_type_id = $this->property_type_list[$this->property_type]['rowID'];
           }
           else
           {
               $status = false;
           }
-          $echo_string .= "; Property Type ID:".$this->property_type;
+          $echo_string .= "; Property Type ID:".$this->property_type_id;
           //$this->property_sub_type = $this->mapped_property_sub_type_list[$this->property_sub_type][1]; 
           if(isset($this->property_sub_type_list[$this->property_sub_type]['rowID']))
           {
-             $this->property_sub_type = $this->property_sub_type_list[$this->property_sub_type]['rowID'];
+             $this->property_sub_type_id = $this->property_sub_type_list[$this->property_sub_type]['rowID'];
           }
           else
           {
@@ -476,7 +478,7 @@ Class SyncCRMService{
           {
               $this->saleable_area_unit = $this->mapped_area_unit_list[$this->saleable_area_unit][1];
               $this->saleable_area_in_sqft = AreaUnit::convertToSqft($this->saleable_area_unit,$this->saleable_area);
-              $echo_string .= ";Area in salesforce: ".$this->saleable_area." ".$this->saleable_area_unit." and Converted Area: ".$this->saleable_area_in_sqft." sqft.";
+              $echo_string .= ";Area in salesforce: ".$this->saleable_area." ".$this->saleable_area_unit." and Converted Area: ".$this->saleable_area_in_sqft." Sq Ft";
           }
           else
           {
@@ -492,7 +494,7 @@ Class SyncCRMService{
           }
 
 
-          $echo_string .= "; Property Sub Type ID:".$this->property_sub_type;
+          $echo_string .= "; Property Sub Type ID:".$this->property_sub_type_id;
           $echo_string .= "; Avaiability Id:".$this->availability_name;
           $echo_string .= "; Share To Website:".$this->share_to_website;
           $echo_string .= "; Request Type:".$this->request_type;
@@ -526,8 +528,8 @@ Class SyncCRMService{
         //$query_String = "name=Salesforce Admin&email=crmsupport@buniyad.com&phone=9927701230&txnType=Buy&type=residential&subType=Apartment&city=385818457719445047&area=467876444116787557&comments=Property-1234";
         $endpoint       = "http://www.buniyad.com/postPropertyData?".
                         "txnType=Buy".
-                        "&type=".$this->property_type.
-                        "&subType=".$this->property_sub_type.
+                        "&type=".$this->property_type_id.
+                        "&subType=".$this->property_sub_type_id.
                         "&city=".$this->city_id.
                         "&area=".$this->area_id.
                         "&size=".$this->saleable_area.
@@ -539,10 +541,15 @@ Class SyncCRMService{
                         "&email=crm@buniyad.com"; 
 
     /***** Commenting the code to push data in r-square until completion of testing of area ********/
-
-    /*  $response = $client->request('GET',$endpoint);
-        $result = $response->getBody(); */
-        $result = "success";
+        if(env('EXEC_MODE')=='test')
+        {
+            $result = "success";
+        }
+        else
+        {
+          $response = $client->request('GET',$endpoint);
+          $result = $response->getBody();
+        }
         if($result == "success")
         {
            $this->stats['insert']['success']++;
@@ -568,30 +575,50 @@ Class SyncCRMService{
     private function updateProperty()
     {
 
-        /*$native_total_area = $this->saleable_area;
+        $native_total_area = $this->saleable_area;
+        $total_area = $this->saleable_area_in_sqft;
         $abr_nta = $this->saleable_area_unit;
         $unit_of_nta = AreaUnit::unitFormula($this->saleable_area_unit);
-        $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
-        $property_name = $this->getPropertyName($vrr_property_details);
-        $prp_website_title = $this->getPropertyTitle($vrr_property_details);
-        $share_to_website = $this->share_to_website;
 
+        $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
+        if(isset($vrr_property_details))
+        {
+          $vrr_property_details = $vrr_property_details[0];
+          $property_name = $this->getPropertyName($vrr_property_details);
+          $prp_website_title = $this->getPropertyTitle($vrr_property_details);
+          $share_to_website = $this->share_to_website;
+        }
+
+
+        /****************************************************************************
+        * We are not updating all the fields as of now. Following fields are updated
+        * 1) Property Size
+        * 2) Property Price
+        * 3) Share To Website
+        * 
+        *
+        *
+        *****************************************************************************/
 
         $result = DB::update("UPDATE v_rr_property 
                               SET    push_to_website=?,
+                                     total_area=?,
                                      native_total_area = ?,
                                      unit_of_nta = ?,
                                      abr_nta = ?,
                                      property_name = ?,
-                                     prp_website_title = ?
+                                     prp_website_title = ?,
+                                     cost =?
                               WHERE  Comments like 'P-%' and Comments=?",[$share_to_website,
+                                                                          $total_area,
                                                                           $native_total_area,
                                                                           $unit_of_nta,
                                                                           $abr_nta,
                                                                           $property_name,
                                                                           $prp_website_title,
+                                                                          $this->price,
                                                                           $this->availability_name]
-                            );*/
+                            );
 
         $this->stats['update']['success']++;
     }
@@ -643,8 +670,18 @@ Class SyncCRMService{
         if( env('DEBUG'))
         {
           echo "<br/>";
-          if(is_array($val) || is_object($val))
-            var_dump($val);
+          if(is_array($val))
+          {
+              echo "<pre>";
+              print_r($val);
+              echo "</pre>";
+          }
+          else if(is_object($val))
+          {
+              echo "<pre>";
+              var_dump($val);
+              echo "</pre>";
+          }
           else
             echo "<br/>$val";
         }
@@ -659,7 +696,8 @@ Class SyncCRMService{
       //$property_name = $this->property_sub_type." ".$this->saleable_area;
      // $this->debug($property_record);
       $property_name = $property_record->property_name;
-      $property_name = str_replace($this->saleable_area_in_sqft, $this->saleable_area, $property_name);
+      $total_area = $property_record->native_total_area;
+      $property_name = str_replace($total_area, $this->saleable_area, $property_name);
       $property_name = str_replace("Sq Ft", $this->saleable_area_unit, $property_name);
 
       return $property_name;
@@ -670,9 +708,9 @@ Class SyncCRMService{
       //Office Space of 1474.0 Sq Ft.  for sale, INR 1.77 Cr at Central Noida, Noida
       //Industrial Building/Factory of 550.0 Sq Mt.  at Surajpur Site 4, Greater Noida
       //$property_title = $this->property_sub_type." of ".$this->saleable_area." at ".$this->area.", ".$this->city;
-
+      $total_area = $property_record->native_total_area;
       $property_title = $property_record->prp_website_title;
-      $property_title = str_replace($this->saleable_area_in_sqft, $this->saleable_area, $property_title);
+      $property_title = str_replace($total_area, $this->saleable_area, $property_title);
       $property_title = str_replace("Sq Ft", $this->saleable_area_unit, $property_title);
 
       return $property_title;
@@ -681,8 +719,8 @@ Class SyncCRMService{
     private function getVRRPropertyDetails()
     {
      
-        $records = DB::select('select property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
-        return $records[0];
+        $records = DB::select('select native_total_area,total_area,property_name,prp_website_title from v_rr_property where comments = ?',[$this->availability_name]); 
+        return $records;
     }
 
     private function displayStatistics()
