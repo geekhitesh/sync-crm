@@ -12,37 +12,51 @@ use App\SyncProcess;
 Class SyncCRMService{
 
     private $availability_name;
+
     private $property_type;
     private $property_sub_type;
     private $property_type_id;
     private $property_sub_type_id;
-    private $city;
-    private $area;
+
     private $request_type;
     private $share_to_website;
+
+    private $city;
+    private $area;
     private $city_id;
     private $area_id;
+
     private $no_of_bedrooms;
     private $no_of_bathrooms;
     private $saleable_area;
     private $saleable_area_in_sqft;
     private $property_filter_data;
+    private $floor;
+    private $facing;
+
     private $area_list;
     private $property_type_list;
     private $property_sub_type_list;
     private $city_list;
-    private $request_status;
+
+
     private $mapped_property_type_sub_type_list;
     private $mapped_city_list;
     private $mapped_area_list;
     private $mapped_property_type_list;
     private $mapped_property_sub_type_list;
+    private $mapped_floor_list;
+    private $mapped_facing_list;
+
     private $stats;
     private $error_description;
     private $price;
     private $saleable_area_unit;
     private $sync_process;
+    private $request_status;
 
+
+  
     public function __construct()
     {
        $this->postPropertyFilterData();
@@ -52,6 +66,8 @@ Class SyncCRMService{
        $this->mapped_property_type_list           = json_decode($this->convertCSVToJSON('property_type_list.csv'),TRUE);
        $this->mapped_property_sub_type_list       = json_decode($this->convertCSVToJSON('property_sub_type_list.csv'),TRUE);
        $this->mapped_property_type_sub_type_list  = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
+       $this->mapped_floor_list                   = json_decode($this->convertCSVToJSON('floor_list.csv'),TRUE);
+       $this->mapped_facing_list                  = json_decode($this->convertCSVToJSON('facing_list.csv'),TRUE);
        //$this->debug($this->mapped_area_list);
        //$this->debug($this->mapped_property_sub_type_list);
        $this->stats = array();
@@ -218,7 +234,12 @@ Class SyncCRMService{
                     $this->debug($request);
                     $this->parseRequest($request);
                     $decoded_string .= $this->attributeMapper();
-                    //$this->request_type= "INSERT";
+
+                    if(env('EXEC_MODE')=='test')
+                    {
+                       $this->request_type= "INSERT";
+                    }
+                    
                     $this->validateRequest();
                     if($this->request_type == "INSERT" && $this->request_status <> 'E')
                     {
@@ -319,7 +340,23 @@ Class SyncCRMService{
            $this->price = 0;
        }
 
-       //RealtyForce__Project_Area__c
+       if(isset($request['RealtyForce__Floor__c']))
+       {
+           $this->floor = $request['RealtyForce__Floor__c'];
+       }
+       else
+       {
+          $this->floor= 0;
+       }
+
+       if(isset($request['RealtyForce__Facing__c']))
+       {
+           $this->facing = $request['RealtyForce__Facing__c'];
+       }
+       else
+       {
+          $this->facing= '';
+       }       
 
        if(isset($request['RealtyForce__Project_Area__c']))
        {
@@ -328,7 +365,9 @@ Class SyncCRMService{
        else
        {
            $this->saleable_area_unit = '';
-       }       
+       }  
+
+
           
 
        $records = DB::select('select count(1) as total_count from v_rr_property where comments = ?',[$this->availability_name]); 
@@ -399,7 +438,9 @@ Class SyncCRMService{
                 //$this->debug("Area: ".$this->area);
                 $status = false;
                 $this->error_description .= "Direct Mapping: Area <".$this->area."> not found in R-Square.<br/>";
-            }    
+            }
+
+
           }
           else
           {
@@ -501,6 +542,27 @@ Class SyncCRMService{
               $status = false;
               $this->error_description .= "File Mapping: Area Unit <".$this->saleable_area_unit."> not found in R-Square.<br/>";        
           }
+
+          if(isset($this->mapped_floor_list[$this->floor]))
+          {
+             $this->floor = $this->mapped_floor_list[$this->floor][1];
+          }
+          else
+          {
+              $status = false;
+              $this->error_description .= "File Mapping: Floor <".$this->floor."> not found in R-Square.<br/>";      
+          }
+
+          if(isset($this->mapped_facing_list[$this->facing]))
+          {
+             $this->facing = $this->mapped_facing_list[$this->facing][1];
+          }
+          else
+          {
+              $status = false;
+              $this->error_description .= "File Mapping: Facing <".$this->facing."> not found in R-Square.<br/>";      
+          }          
+
 
           if($this->share_to_website == true) {
               $this->share_to_website = 'Yes';
@@ -609,9 +671,13 @@ Class SyncCRMService{
         * 1) Property Size
         * 2) Property Price
         * 3) Share To Website
-        * 
+        * 4) Floor
+        * 5) Facing
+        * 6) No Of Bedrooms
         *
-        *
+        ****************************************************************************
+        * Future Enhancements
+        * Add Property Content directly
         *****************************************************************************/
 
         $result = DB::update("UPDATE v_rr_property 
@@ -622,7 +688,10 @@ Class SyncCRMService{
                                      abr_nta = ?,
                                      property_name = ?,
                                      prp_website_title = ?,
-                                     cost =?
+                                     cost =?,
+                                     floor = ?,
+                                     facing = ?,
+                                     no_of_bedroom = ?
                               WHERE  Comments like 'P-%' and Comments=?",[$share_to_website,
                                                                           $total_area,
                                                                           $native_total_area,
@@ -631,6 +700,9 @@ Class SyncCRMService{
                                                                           $property_name,
                                                                           $prp_website_title,
                                                                           $this->price,
+                                                                          $this->floor,
+                                                                          $this->facing,
+                                                                          $this->no_of_bedrooms,
                                                                           $this->availability_name]
                             );
 
@@ -659,6 +731,8 @@ Class SyncCRMService{
         $property_name = $this->getPropertyName($vrr_property_details);
         $prp_website_title = $this->getPropertyTitle($vrr_property_details);
         $share_to_website = $this->share_to_website;
+        $floor = $this->floor;
+        $facing = $this->facing;
 
 
         $result = DB::update("UPDATE v_rr_property 
@@ -667,13 +741,17 @@ Class SyncCRMService{
                                      unit_of_nta = ?,
                                      abr_nta = ?,
                                      property_name = ?,
-                                     prp_website_title = ?
+                                     prp_website_title = ?,
+                                     floor = ?,
+                                     facing = ?
                               WHERE  Comments like 'P-%' and Comments=?",[$share_to_website,
                                                                           $native_total_area,
                                                                           $unit_of_nta,
                                                                           $abr_nta,
                                                                           $property_name,
                                                                           $prp_website_title,
+                                                                          $floor,
+                                                                          $facing,
                                                                           $this->availability_name]
                             );
     }
