@@ -4,7 +4,7 @@ Accept-Encoding:           gzip, deflate, br
 Accept-Language:           en-US,en;q=0.9,hi;q=0.8
 Cache-Control:             max-age=0
 Connection:                keep-alive
-Cookie:                    private_content_version=87bab06032f48f792c39f5ed898d4458; XSRF-TOKEN=eyJpdiI6ImZvclI5elF0aDRkNXkxNDlMc1A0enc9PSIsInZhbHVlIjoiQ05TZmI0NElkSHdUaEdkRU5VZE5FNllrdTdMdDFWWnpJNzJrMGlENGx1WklUQnBNMUhXc2NZVWtObUUyWFM1VTd5dlZERENnSFE3VE9kUnA2cHpEZkE9PSIsIm1hYyI6Ijg1MDdhNmRkNWEwYTE5OThkY2JmNThkODFmMzViN2EzZGIwNGIyZDAzZThiYTM3ODQzY2RiYzZmMDQ3NmQwZTAifQ%3D%3D; laravel_session=eyJpdiI6Ino2bXlxRTRTb1AzUXZLUjlWdnNienc9PSIsInZhbHVlIjoiRHNRT3NTbHRZd2J5WG40d1VZb0RoSzhjMzAzRW1lU2l4VHN1SW9WSVBLMjU1N3RsS2VmZGdDU1wvU0JUT3Z0NXFNWTROUlwvaHpnaTFpa0Y3b3ZDbyt0QT09IiwibWFjIjoiZGY5ZGJlNmVjMzExY2NhOTE4NjU1MDZkZmEyODBlZjRjN2UzOTEyYjhiZDQyMDdlOGE2YTc5MjMyMjE1N2ViZiJ9
+Cookie:                    private_content_version=87bab06032f48f792c39f5ed898d4458; XSRF-TOKEN=eyJpdiI6Im1idERhN014dHBsNk5BcVJvSDR2UkE9PSIsInZhbHVlIjoiV09yaHNJSjhQYlpmY1puM01DMjVcLzhUSHhcL1RMYm5BRFcyN09CRldsbkNEclpUdTFxb1VURkdEb1Btdm4rdHJxTXBmMXlHNEo5RE5iU1c4MkJLTU1CQT09IiwibWFjIjoiNjEyMDJmZjA3OWMzMTA3ZjE5OGI5YTEzMDM4MDQ0MGNhNjZjMTFkMDcyNTA3YmU3NjQ0OWQyNjk2N2FlZjBkZiJ9; laravel_session=eyJpdiI6IlwvK1dXbU9FNTBtMW5LWjdIU1dRdTlBPT0iLCJ2YWx1ZSI6IlNuM2N1ZFJyd3M4WThoejZEMlEzSUZvXC9EVXJnR3FKb29mNURpQmNnVDBXTmhNTkh2WDY5QXFuQjdIM2ZpbUxKb29Tck9IYnkyTVdOVkR4TkpITGxBdz09IiwibWFjIjoiNzM2OTVjZGJiY2U0NjA0YmNkMjdkNDlmMmY2Y2U3YmY1MmEyMTA3Y2JlNzZhZmRjNTQ1NDliMzc3NWE2Njc3ZiJ9
 Host:                      localhost:8000
 Upgrade-Insecure-Requests: 1
 User-Agent:                Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.99 Safari/537.36
