@@ -8,6 +8,7 @@ Add Project from salesforce,enhancement,6,
 Add Property Description from salesforce,enhancement,3,
 Add floor and no. of floors from salesforce,enhancement,1,Fixed
 Only Size/Price getting updated from salesforce,enhancement,5,
-Check if unit is missing,defect,1,
-Salesforce Performing Retries,defect,1,
+Basic Validations on Input,defect,1,Fixed
+Salesforce Performing Retries,defect,1,fixed
 Add Facing from salesforce,enhancement,1,Fixed
+"If Availability is not approved, discard this record and send it for error",defect,1,Fixed

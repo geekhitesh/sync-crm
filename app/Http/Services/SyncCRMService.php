@@ -54,6 +54,7 @@ Class SyncCRMService{
     private $saleable_area_unit;
     private $sync_process;
     private $request_status;
+    private $availability_status;
 
 
   
@@ -165,9 +166,10 @@ Class SyncCRMService{
        //$this->debug($this->area_list);
     }
 
-    function is_assoc($arr)
+    private function is_assoc($arr)
     {
-        return array_keys($arr) !== range(0, count($arr) - 1);
+        if(is_array($arr))
+          return array_keys($arr) !== range(0, count($arr) - 1);
     }
 
     public function syncProperties($records)
@@ -218,11 +220,11 @@ Class SyncCRMService{
                       *   call the corresponding function. 
                       *******************************************************/
 
-                      if($this->request_type = "INSERT")
+                      if($this->request_type = "INSERT" && $this->request_status <> 'E')
                       {
                           $this->insertProperty();
                       }
-                      else if($this->request_type = "UPDATE")
+                      else if($this->request_type = "UPDATE" && $this->request_status <> 'E')
                       {
                          $this->updateProperty();
                       }
@@ -252,7 +254,12 @@ Class SyncCRMService{
 
                 }
 
+                if($this->request_status =='E')
+                {
+                   $this->debug($this->error_description);
+                }
             }
+
            $record->decoded_string = $decoded_string;
            $record->request_status = $this->request_status;
            $record->error_description = $this->error_description;
@@ -367,7 +374,16 @@ Class SyncCRMService{
            $this->saleable_area_unit = '';
        }  
 
+       //RealtyForce__Availability_Status__c
 
+       if(isset($request['RealtyForce__Availability_Status__c']))
+       {
+           $this->availability_status = $request['RealtyForce__Availability_Status__c'];
+       }
+       else
+       {
+           $this->availability_status = 'Pending';
+       }  
           
 
        $records = DB::select('select count(1) as total_count from v_rr_property where comments = ?',[$this->availability_name]); 
@@ -382,11 +398,7 @@ Class SyncCRMService{
     }
 
 
-    private function validateRequest()
-    {
 
-
-    }
   
     private function attributeMapper()
     {
@@ -587,7 +599,6 @@ Class SyncCRMService{
             $echo_string .= "; Parsing Status: Failed";
             $this->stats[strtolower($this->request_type)]['failed']++;
             $this->request_status = 'E';
-            $this->debug($this->error_description);
         }
         else
         {
@@ -871,6 +882,19 @@ Class SyncCRMService{
       $this->sync_process->total_records_processed = $total_records;
 
       $this->sync_process->save();
+    }
+
+    private function validateRequest()
+    {
+        // TODO
+
+      if($this->availability_status == 'Pending')
+      {
+        $this->request_status= 'E'; //Error out since availability is pending.
+        $this->error_description .='Availability '.$this->availability_name." is not in Approved Status.";
+      }
+
+
     }
 
 } 
