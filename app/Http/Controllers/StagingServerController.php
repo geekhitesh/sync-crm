@@ -65,17 +65,6 @@ class StagingServerController extends Controller
 
    public function dummyResponse()
    {
-        /* $msg = '<?xml version="1.0" encoding="UTF-8"?>'.
-                    '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"'.
-                    ' xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'.
-                        '<soapenv:Body>'.
-                          '<element name="notificationsResponse">'.
-                              '<Ack>true</Ack>'.
-                          '</element>'.
-                        '</soapenv:Body>
-                    </soapenv:Envelope>'; */
-
-
          $msg = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
                    '<soapenv:Header/>'.
                       '<soapenv:Body>'.
