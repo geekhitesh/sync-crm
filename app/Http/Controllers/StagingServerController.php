@@ -76,14 +76,14 @@ class StagingServerController extends Controller
                     </soapenv:Envelope>'; */
 
 
-         $msg = '<?xml version="1.0" encoding="UTF-8"?> <soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
-                  '<soapenv:Header/>'.
-                  '<soapenv:Body>'.
-                    '<out:notificationsResponse>'.
-                      '<out:Ack>?</out:Ack>'.
-                    '</out:notificationsResponse>'.
-                  '</soapenv:Body>'.
-                '</soapenv:Envelope>';     
+         $msg = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
+                   '<soapenv:Header/>'.
+                      '<soapenv:Body>'.
+                        '<out:notificationsResponse>'.
+                                   '<out:Ack>true</out:Ack>'.
+                        '</out:notificationsResponse>'.
+                        '</soapenv:Body>'.
+                '</soapenv:Envelope>';   
 
         return $msg;
    }
