@@ -24,16 +24,16 @@ class StagingServerController extends Controller
     public function insertProperty(Request $request)
     {
         $new_result = explode("\x0D",$request);
-        File::put("dump.txt2",$new_result);
+        /*File::put("dump.txt2",$new_result);
         File::put("dump.txt1",$request);
-        File::put("dump.txt3",$new_result[10]);
+        File::put("dump.txt3",$new_result[10]);*/
         $response = $new_result[10];
         $clean_response = str_ireplace(['soapenv:', 'sf:'], '', $response);
-        File::put("dump.txt4",$clean_response);
+        //File::put("dump.txt4",$clean_response);
         $clean_response = implode("\n", array_filter(explode("\n", $clean_response)));
-        File::put("dump.txt5",$clean_response);
+        //File::put("dump.txt5",$clean_response);
         $xml = simplexml_load_string($clean_response);
-        File::put("dump.txt6",json_encode($xml));
+        //File::put("dump.txt6",json_encode($xml));
         
        $this->staging_server->request_input = json_encode($xml);
        $count = StagingServer::where('request_status','P')->where('request_input',$this->staging_server->request_input)->count();
@@ -45,7 +45,7 @@ class StagingServerController extends Controller
        
        //$this->staging_server->save();
        $requests =  StagingServer::all(array('request_id'));    
-       File::put("dump.txt7",json_encode($requests));
+       //File::put("dump.txt7",json_encode($requests));
 
        $response = $this->dummyResponse();
        //header("Content-type: text/xml;charset=utf-8");
@@ -65,7 +65,7 @@ class StagingServerController extends Controller
 
    public function dummyResponse()
    {
-         $msg = '<?xml version="1.0" encoding="UTF-8"?>'.
+         /*$msg = '<?xml version="1.0" encoding="UTF-8"?>'.
                     '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"'.
                     ' xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'.
                         '<soapenv:Body>'.
@@ -73,8 +73,16 @@ class StagingServerController extends Controller
                               '<Ack>true</Ack>'.
                           '</element>'.
                         '</soapenv:Body>
-                    </soapenv:Envelope>';
+                    </soapenv:Envelope>';*/
 
+         $msg = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
+                   '<soapenv:Header/>'.
+		      '<soapenv:Body>'.
+			'<out:notificationsResponse>'.
+			           '<out:Ack>true</out:Ack>'.
+			'</out:notificationsResponse>'.
+                	'</soapenv:Body>'.
+                '</soapenv:Envelope>';
         return $msg;
    }
 
