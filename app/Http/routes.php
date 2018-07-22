@@ -22,3 +22,6 @@ Route::get('/location-list-by-city/{city_id}','StagingServerController@getAreaLi
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::any('staging-server/statistics/{count}', 'StagingServerController@getStatistics');
+Route::any('staging-server/report/{id}', 'StagingServerController@getReport');

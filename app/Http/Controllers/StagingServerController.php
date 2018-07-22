@@ -10,6 +10,7 @@ use GuzzleHttp\Client;
 use File;
 use DB;
 use App\Http\Services;
+use App\SyncProcess;
 
 class StagingServerController extends Controller
 {
@@ -18,11 +19,12 @@ class StagingServerController extends Controller
     public function __construct()
     {
         $this->staging_server = new StagingServer();
-        $this->sync_crm_service = new Services\SyncCRMService();
+       
     }
 
     public function insertProperty(Request $request)
     {
+        $this->sync_crm_service = new Services\SyncCRMService();
         $new_result = explode("\x0D",$request);
         /*File::put("dump.txt2",$new_result);
         File::put("dump.txt1",$request);
@@ -74,6 +76,20 @@ class StagingServerController extends Controller
                 	'</soapenv:Body>'.
                 '</soapenv:Envelope>';
         return $msg;
+   }
+
+   public function getStatistics($count)
+   {
+      $sync_process = SyncProcess::where('total_records_processed','>',0)
+                                 ->orderBy('created_at','desc')
+                                 ->take($count)
+                                 ->get();
+      return view('reports.statistics')->with(compact('sync_process'));
+   }
+
+   public function getReport($sync_process_id)
+   {
+      return $sync_process_id;
    }
 
 }
