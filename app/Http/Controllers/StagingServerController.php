@@ -65,6 +65,7 @@ class StagingServerController extends Controller
 
    public function dummyResponse()
    {
+<<<<<<< HEAD
          /*$msg = '<?xml version="1.0" encoding="UTF-8"?>'.
                     '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/"'.
                     ' xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">'.
@@ -74,6 +75,16 @@ class StagingServerController extends Controller
                           '</element>'.
                         '</soapenv:Body>
                     </soapenv:Envelope>';*/
+=======
+         $msg = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
+                   '<soapenv:Header/>'.
+                      '<soapenv:Body>'.
+                        '<out:notificationsResponse>'.
+                                   '<out:Ack>true</out:Ack>'.
+                        '</out:notificationsResponse>'.
+                        '</soapenv:Body>'.
+                '</soapenv:Envelope>';   
+>>>>>>> 0c37c7efdb74cba8782141da83188c797a8ed3d4
 
          $msg = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:out="http://soap.sforce.com/2005/09/outbound">'.
                    '<soapenv:Header/>'.
