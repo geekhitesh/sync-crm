@@ -33,7 +33,7 @@ class Kernel extends ConsoleKernel
 
            //$records =  StagingServer::all(array('request_id','request_input','request_status'));
            $records =  StagingServer::where('request_status','=','P')->get();
-            if($records->count > 0)
+            if($records->count() > 0)
             {
                 $sync_crm_service = new Services\SyncCRMService();
                 $sync_crm_service->syncProperties($records); 
