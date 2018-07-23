@@ -128,7 +128,7 @@ Class SyncCRMService{
 
     private function convertCSVToJSON($file_name,$skip_header = true)
     {
-        $file_name="salesforce/".$file_name;
+        $file_name=public_path()."/salesforce/".$file_name;
         $file = fopen($file_name,"r");
         $result = array();
         $count = 0;
