@@ -5,6 +5,9 @@ namespace App\Console;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use App\Http\Services;
+use App\StagingServer;
+
 class Kernel extends ConsoleKernel
 {
     /**
@@ -25,6 +28,16 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')
-        //          ->hourly();
+         //         ->everyMinute();
+        $schedule->call(function (){
+
+           //$records =  StagingServer::all(array('request_id','request_input','request_status'));
+           $records =  StagingServer::where('request_status','=','P')->get();
+            if($records->count > 0)
+            {
+                $sync_crm_service = new Services\SyncCRMService();
+                $sync_crm_service->syncProperties($records); 
+            }
+        })->everyMinute();
     }
 }

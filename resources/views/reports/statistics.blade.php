@@ -24,7 +24,7 @@ foreach($sync_process as $process)
 <html>
 
 <head>
-  <title>Sync Statistics</title>
+  <title>Sync Process - Statistics</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -37,7 +37,7 @@ foreach($sync_process as $process)
     	<thead class="alert alert-info">
     		<tr>
     			<td>Sync Id</td>
-    			<td>Date</td>
+    			<td>Sync Date</td>
    				<td>Total Records</td>
    				<td>Insert Success</td>
    				<td>Insert Failure</td>
@@ -49,7 +49,7 @@ foreach($sync_process as $process)
     	</thead>
 	@foreach ($sync_process as $process)
 		<tr>
-			<td><a href="../report/{{$process->id}}">{{$process->id}}</a></td>
+			<td><a href="../report/{{$process->id}}" target="_blank">{{$process->id}}</a></td>
 			<td>{{date("d-m-Y",strtotime($process->created_at))}}</td>
 			<td>{{$process->total_records_processed}}</td>
 			<td>{{$process->insert_success_count}} </td>

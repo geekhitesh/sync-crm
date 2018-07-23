@@ -24,7 +24,7 @@ class StagingServerController extends Controller
 
     public function insertProperty(Request $request)
     {
-        $this->sync_crm_service = new Services\SyncCRMService();
+       
         $new_result = explode("\x0D",$request);
         /*File::put("dump.txt2",$new_result);
         File::put("dump.txt1",$request);
@@ -46,7 +46,7 @@ class StagingServerController extends Controller
        }
        
        //$this->staging_server->save();
-       $requests =  StagingServer::all(array('request_id'));    
+       //$requests =  StagingServer::all(array('request_id'));    
        //File::put("dump.txt7",json_encode($requests));
 
        $response = $this->dummyResponse();
@@ -56,13 +56,14 @@ class StagingServerController extends Controller
 
     }
 
-    public function syncCRM(Request $request)
+    public function syncCRM()
     {
+        $this->sync_crm_service = new Services\SyncCRMService();
        //$records =  StagingServer::all(array('request_id','request_input','request_status'));
        $records =  StagingServer::where('request_status','=','P')->get();
 
        $effected_rows = $this->sync_crm_service->syncProperties($records); 
-   } 
+   }
 
 
    public function dummyResponse()
@@ -89,7 +90,10 @@ class StagingServerController extends Controller
 
    public function getReport($sync_process_id)
    {
-      return $sync_process_id;
+      $records = StagingServer::where('sync_process_id',$sync_process_id)
+                                ->get();
+      //var_dump($records);
+      return view('reports.sync_process_detail')->with(compact('records'));
    }
 
 }
