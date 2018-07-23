@@ -892,6 +892,7 @@ Class SyncCRMService{
       {
         $this->request_status= 'E'; //Error out since availability is pending.
         $this->error_description .='Availability '.$this->availability_name." is not in Approved Status.";
+        $this->stats[strtolower($this->request_type)]['failed']++;
       }
 
 
