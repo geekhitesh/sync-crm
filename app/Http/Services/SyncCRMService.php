@@ -347,9 +347,9 @@ Class SyncCRMService{
            $this->price = 0;
        }
 
-       if(isset($request['RealtyForce__Floor__c']))
+       if(isset($request['RealtyForce__Floor1__c']))
        {
-           $this->floor = $request['RealtyForce__Floor__c'];
+           $this->floor = $request['RealtyForce__Floor1__c'];
        }
        else
        {
@@ -561,8 +561,8 @@ Class SyncCRMService{
           }
           else
           {
-              $status = false;
-              $this->error_description .= "File Mapping: Floor <".$this->floor."> not found in R-Square.<br/>";      
+              //$status = false;
+              $this->error_description .= "Warning: Floor <".$this->floor."> not found in R-Square.Property is created in R-Square.<br/>";      
           }
 
           if(isset($this->mapped_facing_list[$this->facing]))
