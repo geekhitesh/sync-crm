@@ -55,6 +55,7 @@ Class SyncCRMService{
     private $sync_process;
     private $request_status;
     private $availability_status;
+    private $website_property_id;
 
 
   
@@ -260,10 +261,18 @@ Class SyncCRMService{
                 }
             }
 
-           $record->decoded_string = $decoded_string;
-           $record->request_status = $this->request_status;
-           $record->error_description = $this->error_description;
-           $record->sync_process_id = $this->sync_process->id;
+            $record->decoded_string = $decoded_string;
+            $record->request_status = $this->request_status;
+            $record->error_description = $this->error_description;
+            $record->sync_process_id = $this->sync_process->id;
+            if($this->share_to_website == 'Yes')
+            {
+              $record->website_property_id = $this->website_property_id;
+            }
+            else
+            {
+               $record->website_property_id  = '';
+            }
            $record->save(); 
         }         
         //$this->debug($this->stats);
@@ -284,7 +293,7 @@ Class SyncCRMService{
            $this->area = "";
        }
 
-       $this->share_to_website = $request['Share_To_Buniyad_Website__c'];
+        $this->share_to_website = $request['Share_To_Buniyad_Website__c'];
 
        if(isset($request['RealtyForce__Picklist__c']))
        {
@@ -561,8 +570,11 @@ Class SyncCRMService{
           }
           else
           {
-              //$status = false;
-              $this->error_description .= "Warning: Floor <".$this->floor."> not found in R-Square.Property is created in R-Square.<br/>";      
+              if(trim($this->floor) != '')
+              {
+                  $status = false;
+                  $this->error_description .= "Floor <".$this->floor."> not found in R-Square.Property is created in R-Square.<br/>";   
+              }   
           }
 
           if(isset($this->mapped_facing_list[$this->facing]))
@@ -571,17 +583,21 @@ Class SyncCRMService{
           }
           else
           {
-              $status = false;
-              $this->error_description .= "File Mapping: Facing <".$this->facing."> not found in R-Square.<br/>";      
+              if(trim($this->facing) != '')
+              {
+                $status = false;
+                 $this->error_description .= "File Mapping: Facing <".$this->facing."> not found in R-Square.<br/>";      
+              }
+             
           }          
 
-
-          if($this->share_to_website == true) {
+          if($this->share_to_website == "true") {
               $this->share_to_website = 'Yes';
           }
           else {
               $this->share_to_website = 'No';
           }
+
 
 
           $echo_string .= "; Property Sub Type ID:".$this->property_sub_type_id;
@@ -670,11 +686,10 @@ Class SyncCRMService{
         $unit_of_nta = AreaUnit::unitFormula($this->saleable_area_unit);
 
         $vrr_property_details = $this->getVRRPropertyDetails($this->availability_name);
-       // $vrr_property_details = $vrr_property_details[0];
         $property_name = $this->getPropertyName($vrr_property_details);
         $prp_website_title = $this->getPropertyTitle($vrr_property_details);
         $share_to_website = $this->share_to_website;
-
+        $this->website_property_id = $vrr_property_details->row_id;
 
 
         /****************************************************************************
@@ -744,6 +759,7 @@ Class SyncCRMService{
         $share_to_website = $this->share_to_website;
         $floor = $this->floor;
         $facing = $this->facing;
+        $this->website_property_id = $vrr_property_details->row_id;
 
 
         $result = DB::update("UPDATE v_rr_property 
@@ -850,7 +866,7 @@ Class SyncCRMService{
     private function getVRRPropertyDetails()
     {
      
-        $records = DB::select('select abr_nta,native_total_area,total_area,property_name,prp_website_title,cost from v_rr_property where comments = ?',[$this->availability_name]); 
+        $records = DB::select('select row_id,abr_nta,native_total_area,total_area,property_name,prp_website_title,cost from v_rr_property where comments = ?',[$this->availability_name]); 
         return $records[0];
     }
 

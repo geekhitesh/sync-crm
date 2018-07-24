@@ -19,6 +19,7 @@
    				<td>Sync Date</td>
    				<td>Request Status</td>
    				<td>Error</td>	
+          <td>Actions</td>
     		</tr>
     	</thead>
 	@foreach ($records as $record)
@@ -33,6 +34,11 @@
 			<td>{{date("d-m-Y",strtotime($record->created_at))}} </td>
 			<td>{{$record->request_status}} </td>
 			<td><?php echo $record->error_description ?></td>
+      <td>
+          @if($record->website_property_id !='')
+            <a href="https://www.buniyad.com/residential-property/a-a/a/{{$record->website_property_id}}.html" target="_blank">View On Website</a>
+          @endif
+      </td>
 		</tr>
 	@endforeach
 	</table>
