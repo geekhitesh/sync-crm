@@ -416,7 +416,7 @@ Class SyncCRMService{
       $status = true;
        if(isset($this->mapped_city_list[$this->city]))
        {
-
+          $city = $this->city; // preserve the value of salesforce city before overriding it.
           $this->city = $this->mapped_city_list[$this->city][1]; /* [1] value will always correspond to r-square city name  */ 
           if($this->city != "NA")
           {
@@ -433,6 +433,7 @@ Class SyncCRMService{
 
             if (isset($this->mapped_area_list[$this->area][1]))
             {
+                $area = $this->area; // preserve salesforce-area before overriding it.
                 $this->area = $this->mapped_area_list[$this->area][1];
             
                 if($this->area != "NA")
@@ -441,7 +442,7 @@ Class SyncCRMService{
                 }
                 else
                 {
-                    $this->error_description .= "File Mapping: Area <".$this->area_id."> not found in R-Square<br/>";
+                    $this->error_description .= "File Mapping: Area <".$area."> not found in R-Square<br/>";
                     $status = false;
                 }
                 $echo_string .= "<br/>City Name:".$this->city."; City Id:".$this->city_id."; Area Name:".$this->area. "; Area Id:".$this->area_id;
@@ -467,7 +468,7 @@ Class SyncCRMService{
           else
           {
              $status = false;
-             $this->error_description .= "File Mapping: City <".$this->city."> not found in R-Square.<br/>";
+             $this->error_description .= "File Mapping: City <".$city."> not found in R-Square.<br/>";
           }
 
           /***********************************************************************************
@@ -512,7 +513,12 @@ Class SyncCRMService{
           {
               if(isset($this->mapped_property_type_sub_type_list[$this->property_sub_type][1]))
               {
-                  $this->property_type = $this->mapped_property_type_sub_type_list[$this->property_sub_type][1]; 
+                  $property_type = $this->property_type; // preserve value of salesforce-property_type before overriding it.
+                  $this->property_type = $this->mapped_property_type_sub_type_list[$this->property_sub_type][1];
+                  if($this->property_type=="NA")
+                  {
+                    $this->error_description .= "File Mapping: Property Type <".$property_type."> not found in R-Square.<br/>";
+                  } 
               }
               else
               {
@@ -521,7 +527,12 @@ Class SyncCRMService{
               }
               if(isset($this->mapped_property_type_sub_type_list[$this->property_sub_type][2]))
               {
+                  $property_sub_type = $this->property_sub_type; // preserve value of salesforce-property_sub_type before overriding it.
                   $this->property_sub_type = $this->mapped_property_type_sub_type_list[$this->property_sub_type][2];
+                  if($this->property_sub_type=="NA")
+                  {
+                    $this->error_description .= "File Mapping: Property Type <".$property_sub_type."> not found in R-Square.<br/>";
+                  } 
               }
               else
               {
