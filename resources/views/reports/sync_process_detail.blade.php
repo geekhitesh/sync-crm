@@ -38,7 +38,7 @@
                 echo $record->error_description ;
                 if(trim($record->error_description) != '')
                 {
-                  echo "<br/>Detailed Explanation: <br/>".$this->decoded_string;
+                  echo "<br/>Detailed Explanation: <br/>".$record->decoded_string;
                 }
           ?>
             
