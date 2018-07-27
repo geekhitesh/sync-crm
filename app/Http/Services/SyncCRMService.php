@@ -531,7 +531,7 @@ Class SyncCRMService{
                   $this->property_sub_type = $this->mapped_property_type_sub_type_list[$this->property_sub_type][2];
                   if($this->property_sub_type=="NA")
                   {
-                    $this->error_description .= "File Mapping: Property Type <".$property_sub_type."> not found in R-Square.<br/>";
+                    $this->error_description .= "File Mapping: Property Sub Type <".$property_sub_type."> not found in R-Square.<br/>";
                   } 
               }
               else

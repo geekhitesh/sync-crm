@@ -33,7 +33,16 @@
 			<td><pre>{{print_r($request)}} </pre></td>
 			<td>{{date("d-m-Y",strtotime($record->created_at))}} </td>
 			<td>{{$record->request_status}} </td>
-			<td><?php echo $record->error_description ?></td>
+			<td><?php 
+
+                echo $record->error_description ;
+                if(trim($record->error_description) != '')
+                {
+                  echo "<br/>Detailed Explanation: <br/>".$this->decoded_string;
+                }
+          ?>
+            
+      </td>
       <td>
           @if($record->website_property_id !='')
             <a href="https://www.buniyad.com/residential-property/a-a/a/{{$record->website_property_id}}.html" target="_blank">View On Website</a>
