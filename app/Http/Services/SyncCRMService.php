@@ -175,6 +175,7 @@ Class SyncCRMService{
 
     public function syncProperties($records)
     {
+        //sleep(20);
         //$this->debug($this->mapped_city_list);
         foreach($records as $record)
         {
@@ -570,7 +571,7 @@ Class SyncCRMService{
           }
           else
           {
-              if(trim($this->floor) != '')
+              if(trim($this->floor) != 0)
               {
                   $status = false;
                   $this->error_description .= "Floor <".$this->floor."> not found in R-Square.Property is created in R-Square.<br/>";   

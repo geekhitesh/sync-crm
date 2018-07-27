@@ -16,6 +16,10 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\SomeEvent' => [
             'App\Listeners\EventListener',
         ],
+
+        'App\Events\PropertyPushed' => [
+            'App\Listeners\PropertyListener',
+        ],
     ];
 
     /**

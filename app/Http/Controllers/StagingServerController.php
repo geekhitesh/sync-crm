@@ -12,6 +12,8 @@ use DB;
 use App\Http\Services;
 use App\SyncProcess;
 
+use App\Events\PropertyPushed;
+
 class StagingServerController extends Controller
 {
     private $staging_server;
@@ -43,6 +45,7 @@ class StagingServerController extends Controller
        if($count <= 0)
        {
            $this->staging_server->save();
+           //event(new PropertyPushed($this->staging_server));
        }
        
        //$this->staging_server->save();
@@ -61,7 +64,9 @@ class StagingServerController extends Controller
         $this->sync_crm_service = new Services\SyncCRMService();
        //$records =  StagingServer::all(array('request_id','request_input','request_status'));
        $records =  StagingServer::where('request_status','=','P')->get();
-
+       StagingServer::where('request_status','=','P')
+                      ->update(['request_status'=>'I']);
+                      
        $effected_rows = $this->sync_crm_service->syncProperties($records); 
    }
 
