@@ -26,3 +26,12 @@ Route::get('/', function () {
 Route::any('staging-server/statistics/{count}', 'StagingServerController@getStatistics');
 Route::any('staging-server/report/{id}', 'StagingServerController@getReport');
 Route::any('staging-server/report-by-count/{count}', 'StagingServerController@getReportByCount');
+
+
+//File Handling
+
+
+Route::get('/file/list','ReferenceDataController@printFileList');
+Route::get('/file/view/{file_name}','ReferenceDataController@viewFile');
+Route::get('/file/edit/{file_name}/{row_id}','ReferenceDataController@editFile');
+Route::post('/file/save/','ReferenceDataController@saveFile');

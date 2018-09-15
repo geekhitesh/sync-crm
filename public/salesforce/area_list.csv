@@ -12,10 +12,8 @@ Salesforce Location,Derived SF Location,R-Square Location
 11 Sector,11,11
 110 Sector,110,110
 112 Sector,112,112
-113 Sector,NA,NA
 116 Sector,116,116
 117 Sector,117,117
-118 Sector,NA,NA
 119 Sector,119,119
 12 Sector,12,12
 120 Sector,120,120
@@ -49,7 +47,6 @@ Salesforce Location,Derived SF Location,R-Square Location
 15 Sector,15,15
 150 Sector,150,150
 151 Sector,151,151
-152 Sector,NA,NA
 153 Sector,153,153
 154 Sector,154,154
 155 Sector,NA,NA
@@ -452,7 +449,6 @@ BPTP Spacio,NA,NA
 63A Sector,63A,63A
 Radhey Mohan Drive,Radhey Mohan Drive,Radhey Mohan Drive
 Dera Mandi,Dera Mandi,Dera Mandi
-GK1,GK1,GK1
 Kapasera,Kapashera,Kapashera
 Saket,Saket ,Saket 
 East of Kailash,East of Kailash ,East of Kailash 
@@ -517,3 +513,5 @@ Greater Kailash-2,Greater Kailash 2,Greater Kailash 2
 Niti bagh,Neeti Bagh ,Neeti Bagh 
 vasat kunj,Vasant Kunj,Vasant Kunj
 East Nizamuddin,Nizamuddin East ,Nizamuddin East
+152 Sector,152,152
+GK1,Greater Kailash 1,Greater Kailash 1

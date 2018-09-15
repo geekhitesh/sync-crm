@@ -129,7 +129,7 @@ Class SyncCRMService{
         $this->property_sub_type_list= $property_sub_type_array;
     }
 
-    private function convertCSVToJSON($file_name,$skip_header = true)
+    private function convertCSVToJSON($file_name,$skip_header = false)
     {
         $file_name=public_path()."/salesforce/".$file_name;
         $file = fopen($file_name,"r");
