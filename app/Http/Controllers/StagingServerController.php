@@ -66,7 +66,7 @@ class StagingServerController extends Controller
        $records =  StagingServer::where('request_status','=','P')->get();
        StagingServer::where('request_status','=','P')
                       ->update(['request_status'=>'I']);
-                      
+
        $effected_rows = $this->sync_crm_service->syncProperties($records); 
    }
 
@@ -100,5 +100,14 @@ class StagingServerController extends Controller
       //var_dump($records);
       return view('reports.sync_process_detail')->with(compact('records'));
    }
+
+
+   public function getReportByCount($count)
+   {
+      $records = StagingServer::take($count)
+                                ->get();
+      //var_dump($records);
+      return view('reports.sync_process_detail')->with(compact('records'));
+   }   
 
 }

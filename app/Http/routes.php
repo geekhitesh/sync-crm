@@ -25,3 +25,4 @@ Route::get('/', function () {
 
 Route::any('staging-server/statistics/{count}', 'StagingServerController@getStatistics');
 Route::any('staging-server/report/{id}', 'StagingServerController@getReport');
+Route::any('staging-server/report-by-count/{count}', 'StagingServerController@getReportByCount');

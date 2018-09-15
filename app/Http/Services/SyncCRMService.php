@@ -56,6 +56,8 @@ Class SyncCRMService{
     private $request_status;
     private $availability_status;
     private $website_property_id;
+    private $property_status;
+    private $transaction_type;
 
 
   
@@ -222,11 +224,11 @@ Class SyncCRMService{
                       *   call the corresponding function. 
                       *******************************************************/
 
-                      if($this->request_type = "INSERT" && $this->request_status <> 'E')
+                      if($this->request_type == "INSERT" && $this->request_status <> 'E')
                       {
                           $this->insertProperty();
                       }
-                      else if($this->request_type = "UPDATE" && $this->request_status <> 'E')
+                      else if($this->request_type == "UPDATE" && $this->request_status <> 'E')
                       {
                          $this->updateProperty();
                       }
@@ -295,6 +297,37 @@ Class SyncCRMService{
        }
 
         $this->share_to_website = $request['Share_To_Buniyad_Website__c'];
+
+
+
+        //RealtyForce__Transaction_Type__c
+
+       if(isset($request['RealtyForce__Transaction_Type__c']))
+       {
+           $this->transaction_type = $request['RealtyForce__Transaction_Type__c'];
+       }
+       else
+       {
+           $this->transaction_type = "";
+       }
+
+       if(isset($request['RealtyForce__Status__c']))
+       {
+           $this->property_status = $request['RealtyForce__Status__c'];
+       }
+       else
+       {
+           $this->property_status = "";
+       }
+
+        if($this->share_to_website == "true" && $this->property_status =='Active') 
+        {
+            $this->share_to_website = 'Yes';
+        }
+        else 
+        {
+            $this->share_to_website = 'No';
+        }       
 
        if(isset($request['RealtyForce__Picklist__c']))
        {
@@ -603,12 +636,12 @@ Class SyncCRMService{
              
           }          
 
-          if($this->share_to_website == "true") {
+         /* if($this->share_to_website == "true" && $this->property_status =='Active') {
               $this->share_to_website = 'Yes';
           }
           else {
               $this->share_to_website = 'No';
-          }
+          } */
 
 
 
@@ -920,9 +953,28 @@ Class SyncCRMService{
       {
         $this->request_status= 'E'; //Error out since availability is pending.
         $this->error_description .='Availability '.$this->availability_name." is not in Approved Status.";
-        $this->stats[strtolower($this->request_type)]['failed']++;
+        //$this->stats[strtolower($this->request_type)]['failed']++;
       }
 
+      if($this->property_status != 'Active' && $this->request_type == 'INSERT')
+      {
+        $this->request_status = 'E';
+        $this->error_description .='Availability '.$this->availability_name." is not in Active Status.";
+        //$this->stats[strtolower($this->request_type)]['failed']++;
+      }
+
+      //transaction_type
+      if($this->transaction_type != 'Sale')
+      {
+        $this->request_status = 'E';
+        $this->error_description .='Availability '.$this->availability_name." is not for sale. Rent and Rented-Out Property will be considered in next phase.";
+        //$this->stats[strtolower($this->request_type)]['failed']++;
+      }
+
+      if($this->request_status == 'E)
+      {
+        $this->stats[strtolower($this->request_type)]['failed']++;
+      }
 
     }
 
