@@ -100,6 +100,7 @@ class ReferenceDataController extends Controller
     	//echo count($_POST);
     	$updated_record = array();
     	$file_name = $request->input('file_name');
+    	$original_file_name = $file_name;
     	$row_id = $request->input('row_id');
     	$new_array = array();
 
@@ -149,7 +150,12 @@ class ReferenceDataController extends Controller
 		}
 		fclose($file);
 
-    	var_dump( $new_array);
+    	//var_dump( $new_array);
+
+    	//return $this->viewFile($original_file_name);
+
+    	echo "File Saved. View File"."<a href=../file/view/$original_file_name >Click Here</a> ";
+
     }
 
 
