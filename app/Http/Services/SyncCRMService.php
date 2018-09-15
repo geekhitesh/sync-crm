@@ -471,7 +471,16 @@ Class SyncCRMService{
             
                 if($this->area != "NA")
                 {
-                   $this->area_id = $this->area_list[$this->city_id][$this->area]['areaID'];
+                  if(isset($this->area_list[$this->city_id][$this->area]['areaID']))
+                  {
+                    $this->area_id = $this->area_list[$this->city_id][$this->area]['areaID'];
+                  }
+                  else
+                  {
+                    $this->error_description .= "File Mapping: Area <".$area."> not found in R-Square<br/>";
+                    $status = false;
+                  }
+
                 }
                 else
                 {
