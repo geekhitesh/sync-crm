@@ -971,9 +971,23 @@ Class SyncCRMService{
         //$this->stats[strtolower($this->request_type)]['failed']++;
       }
 
-      if($this->request_status == 'E)
+      if($this->request_status == 'E')
       {
-        $this->stats[strtolower($this->request_type)]['failed']++;
+       /* if($this->request_type == 'INSERT')
+        {
+          $this->stats['insert']['failed']++;
+        }
+        else if($this->request_type == 'UPDATE')
+        {
+          $this->stats['update']['failed']++;
+        }
+        else if($this->request_type == 'DELETE')
+        {
+          $this->stats['delete']['failed']++;
+        }        */
+       
+       $this->stats[strtolower($this->request_type)]['failed']++;
+        //$this->stats['insert']['failed']++;
       }
 
     }
