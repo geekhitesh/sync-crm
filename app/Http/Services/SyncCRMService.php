@@ -593,6 +593,7 @@ Class SyncCRMService{
           else
           {
               $status = false;
+              $this->error_description .="Mapping Error: Property Type Error ".$this->property_type."<br/>";
           }
           $echo_string .= "; Property Type ID:".$this->property_type_id;
           //$this->property_sub_type = $this->mapped_property_sub_type_list[$this->property_sub_type][1]; 
@@ -603,6 +604,7 @@ Class SyncCRMService{
           else
           {
               $status = false;
+              $this->error_description .="Mapping Error: Property Sub type error: ".$this->property_sub_type."<br/>";
           }
 
 
@@ -663,6 +665,8 @@ Class SyncCRMService{
        else
        {
           $status = false;
+          $this->error_description .= "File Mapping: City <".$this->city."> not found in R-Square<br/>";
+
        }
         if($status==false)
         {
