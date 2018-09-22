@@ -132,6 +132,7 @@ Class SyncCRMService{
 
     private function convertCSVToJSON($file_name,$skip_header = false)
     {
+        $this->debug("In File Reading.");
         $file_name=public_path()."/salesforce/".$file_name;
         $file = fopen($file_name,"r");
         $result = array();
@@ -148,7 +149,11 @@ Class SyncCRMService{
             $count++;
         }
 
+        $this->debug("After File Read");
+
         $this->debug($result);
+
+        $this->debug("Result printed above");
 
         return json_encode($result);
     }
