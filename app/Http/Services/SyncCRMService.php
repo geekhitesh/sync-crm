@@ -148,6 +148,8 @@ Class SyncCRMService{
             $count++;
         }
 
+        $this->debug($result);
+
         return json_encode($result);
     }
 
