@@ -85,7 +85,7 @@ Class SyncCRMService{
 
        $this->sync_process = new SyncProcess();
 
-       $this->sync_process->save();
+       //$this->sync_process->save();
 
     }
 
@@ -969,8 +969,8 @@ Class SyncCRMService{
       $this->sync_process->update_failed_count = $this->stats['update']['failed'];
       $this->sync_process->insert_failed_count = $this->stats['insert']['failed'];
       $this->sync_process->total_records_processed = $total_records;
-
-      $this->sync_process->save();
+      if($total_records > 0)
+        $this->sync_process->save();
     }
 
     private function validateRequest()
