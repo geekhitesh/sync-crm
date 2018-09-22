@@ -193,6 +193,7 @@ Class SyncCRMService{
             $decoded_string = "";
             $this->request_status = "C";
             $this->error_description = "";
+            $this->website_property_id = '';
             //echo $record->request_input."<br/>";
             $request = json_decode($record->request_input,TRUE); 
             $associative_array = $this->is_assoc($request['Body']['notifications']['Notification']);
