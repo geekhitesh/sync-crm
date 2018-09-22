@@ -72,6 +72,7 @@ Class SyncCRMService{
        $this->mapped_property_type_sub_type_list  = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
        $this->mapped_floor_list                   = json_decode($this->convertCSVToJSON('floor_list.csv'),TRUE);
        $this->mapped_facing_list                  = json_decode($this->convertCSVToJSON('facing_list.csv'),TRUE);
+       $this->debug($this->mapped_city_list);
        //$this->debug($this->mapped_area_list);
        //$this->debug($this->mapped_property_sub_type_list);
        $this->stats = array();
@@ -447,6 +448,7 @@ Class SyncCRMService{
     {
       $echo_string = "";
       $status = true;
+      //$this->debug($this->mapped_city_list);
        if(isset($this->mapped_city_list[$this->city]))
        {
           $city = $this->city; // preserve the value of salesforce city before overriding it.
@@ -665,7 +667,7 @@ Class SyncCRMService{
        else
        {
           $status = false;
-          $this->error_description .= "File Mapping: City <".$this->city."> not found in R-Square<br/>";
+          $this->error_description .= "Exiting whole process: File Mapping: City <".$this->city."> not found in R-Square<br/>";
 
        }
         if($status==false)
