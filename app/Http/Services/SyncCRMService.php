@@ -233,11 +233,11 @@ Class SyncCRMService{
                       *   call the corresponding function. 
                       *******************************************************/
 
-                      if($this->request_type == "INSERT" && $this->request_status <> 'E')
+                      if($this->request_type == "INSERT" && $this->request_status != 'E')
                       {
                           $this->insertProperty();
                       }
-                      else if($this->request_type == "UPDATE" && $this->request_status <> 'E')
+                      else if($this->request_type == "UPDATE" && $this->request_status != 'E')
                       {
                          $this->updateProperty();
                       }
@@ -248,6 +248,7 @@ Class SyncCRMService{
                     $request = $request['Body']['notifications']['Notification']['sObject'];
                     $this->debug($request);
                     $this->parseRequest($request);
+                    $this->validateRequest();
                     $decoded_string .= $this->attributeMapper();
 
                     if(env('EXEC_MODE')=='test')
@@ -255,12 +256,12 @@ Class SyncCRMService{
                        $this->request_type= "INSERT";
                     }
                     
-                    $this->validateRequest();
-                    if($this->request_type == "INSERT" && $this->request_status <> 'E')
+                    
+                    if($this->request_type == "INSERT" && $this->request_status != 'E')
                     {
                         $this->insertProperty();
                     }
-                    else if($this->request_type == "UPDATE" && $this->request_status <> 'E')
+                    else if($this->request_type == "UPDATE" && $this->request_status != 'E')
                     {
                         $this->updateProperty();
                     }
@@ -638,7 +639,7 @@ Class SyncCRMService{
           {
               if(trim($this->floor) != 0)
               {
-                  $status = true;
+                  //$status = true;
                   $this->floor = "";
                   $this->error_description .= "Waring: Floor <".$this->floor."> not found in R-Square.Property is created in R-Square. Hence setting it to empty<br/>";   
               }
@@ -652,7 +653,7 @@ Class SyncCRMService{
           {
               if(trim($this->facing) != '')
               {
-                $status = true;
+                //$status = true;
                 $this->facing = "";
                  $this->error_description .= "Warning: File Mapping: Facing <".$this->facing."> not found in R-Square. Hence setting it to empty.<br/>";      
               }
