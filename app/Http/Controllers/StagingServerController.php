@@ -11,6 +11,8 @@ use File;
 use DB;
 use App\Http\Services;
 use App\SyncProcess;
+use DateTime;
+use DateInterval;
 
 use App\Events\PropertyPushed;
 
@@ -104,10 +106,64 @@ class StagingServerController extends Controller
 
    public function getReportByCount($count)
    {
-      $records = StagingServer::take($count)
+      $records = StagingServer::where('request_input','<>','false')
+                                ->orderBy('created_at','desc')
+                                ->take($count)
                                 ->get();
       //var_dump($records);
       return view('reports.sync_process_detail')->with(compact('records'));
-   }   
+   }  
+
+   public function getReportByFilter($filter_key,$filter_value)
+   {
+
+    //DB::enableQueryLog();
+
+      switch($filter_key)
+      {
+
+        case 'date':
+
+          $format = 'd-m-Y';
+          $date = DateTime::createFromFormat($format,$filter_value);
+          $next_date = DateTime::createFromFormat($format,$filter_value);
+          //$new_date = $date;
+          //echo $date->format('d-m-Y') . "\n";
+          //$new_date->add(new DateInterval('P1D'));
+          //echo $new_date->format('Y-m-d') . "\n";
+          $records = StagingServer::where('created_at','>=',$date)
+                                    ->where('created_at','<',$next_date->add(new DateInterval('P1D')))
+                                    ->where('request_input','<>','false')
+                                    ->orderBy('created_at','desc')
+                                    ->get();
+          //dd(DB::getQueryLog());                          
+          break;
+        case 'count': 
+
+            $records = StagingServer::where('request_input','<>','false')
+                                      ->orderBy('created_at','desc')
+                                      ->take($filter_value)
+                                      ->get();
+          
+          break;
+
+        case 'status':
+
+            $records = StagingServer::where('request_input','<>','false')
+                                      ->where('request_status',$filter_value)
+                                      ->orderBy('created_at','desc')
+                                      ->take(500)
+                                      ->get();
+          
+          break;
+
+        default:
+          return "No Criteria found.";
+     }
+
+
+      //var_dump($records);
+      return view('reports.sync_process_detail')->with(compact('records'));
+   }     
 
 }

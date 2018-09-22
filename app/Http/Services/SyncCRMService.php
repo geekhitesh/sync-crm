@@ -683,7 +683,10 @@ Class SyncCRMService{
         if($status==false)
         {
             $echo_string .= "; Parsing Status: Failed";
-            $this->stats[strtolower($this->request_type)]['failed']++;
+            // If this is E, that means it is already errored out,
+            // No need to count it as error again.
+            if($this->request_status <> 'E')
+              $this->stats[strtolower($this->request_type)]['failed']++;
             $this->request_status = 'E';
         }
         else

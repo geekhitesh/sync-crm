@@ -50,7 +50,7 @@ foreach($sync_process as $process)
 	@foreach ($sync_process as $process)
 		<tr>
 			<td><a href="../report/{{$process->id}}" target="_blank">{{$process->id}}</a></td>
-			<td>{{date("d-m-Y",strtotime($process->created_at))}}</td>
+			<td>{{date("d-m-Y h:i:s A",strtotime($process->created_at))}}</td>
 			<td>{{$process->total_records_processed}}</td>
 			<td>{{$process->insert_success_count}} </td>
 			<td>{{$process->insert_failed_count}} </td>

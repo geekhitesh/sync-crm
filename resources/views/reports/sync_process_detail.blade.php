@@ -27,19 +27,20 @@
 			<td>{{$record->request_id}} </td>
 			<?php
 				$request = json_decode($record->request_input);
-				$request = $request->Body->notifications->Notification;
+        //var_dump($request);
+        if(isset($request->Body->notifications->Notification))
+				  $request = $request->Body->notifications->Notification;
 				//$request->name = "<a href='https://ap4.salesforce.com/'".$request;
 			?>
 			<td><pre>{{print_r($request)}} </pre></td>
-			<td>{{date("d-m-Y",strtotime($record->created_at))}} </td>
+			<td>{{date("d-m-Y h:i:s A",strtotime($record->created_at))}} </td>
 			<td>{{$record->request_status}} </td>
 			<td><?php 
-
-                echo $record->error_description ;
-                if(trim($record->error_description) != '')
-                {
-                  echo "<br/>Detailed Explanation: <br/>".$record->decoded_string;
-                }
+              echo $record->error_description ;
+              if(trim($record->error_description) != '')
+              {
+                echo "<br/>Detailed Explanation: <br/>".$record->decoded_string;
+              }
           ?>
             
       </td>

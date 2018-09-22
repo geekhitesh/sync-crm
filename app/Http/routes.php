@@ -27,6 +27,7 @@ Route::any('staging-server/statistics/{count}', 'StagingServerController@getStat
 Route::any('staging-server/report/{id}', 'StagingServerController@getReport');
 Route::any('staging-server/report-by-count/{count}', 'StagingServerController@getReportByCount');
 
+Route::any('staging-server/report-by-filter/{filter_key}/{filter_value}', 'StagingServerController@getReportByFilter');
 
 //File Handling
 
