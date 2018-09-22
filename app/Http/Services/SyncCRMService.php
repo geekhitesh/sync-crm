@@ -72,7 +72,7 @@ Class SyncCRMService{
        $this->mapped_property_type_sub_type_list  = json_decode($this->convertCSVToJSON('property_type_sub_type_list.csv'),TRUE);
        $this->mapped_floor_list                   = json_decode($this->convertCSVToJSON('floor_list.csv'),TRUE);
        $this->mapped_facing_list                  = json_decode($this->convertCSVToJSON('facing_list.csv'),TRUE);
-       $this->debug($this->mapped_city_list);
+       //$this->debug($this->mapped_city_list);
        //$this->debug($this->mapped_area_list);
        //$this->debug($this->mapped_property_sub_type_list);
        $this->stats = array();
@@ -130,9 +130,10 @@ Class SyncCRMService{
         $this->property_sub_type_list= $property_sub_type_array;
     }
 
-    private function convertCSVToJSON($file_name,$skip_header = false)
+    private function convertCSVToJSON($file_name,$skip_header = true)
     {
-        $this->debug("In File Reading.");
+        //echo "<br/>Reading file ".$file_name;
+        //echo "<br/>File Path: ";
         $file_name=public_path()."/salesforce/".$file_name;
         $file = fopen($file_name,"r");
         $result = array();
@@ -149,11 +150,11 @@ Class SyncCRMService{
             $count++;
         }
 
-        $this->debug("After File Read");
+        //echo "<pre>After File Read";
 
-        $this->debug($result);
+        //var_dump($result);
 
-        $this->debug("Result printed above");
+        //echo "</pre>Result printed above" ;
 
         return json_encode($result);
     }
@@ -637,9 +638,10 @@ Class SyncCRMService{
           {
               if(trim($this->floor) != 0)
               {
-                  $status = false;
-                  $this->error_description .= "Floor <".$this->floor."> not found in R-Square.Property is created in R-Square.<br/>";   
-              }   
+                  $status = true;
+                  $this->floor = "";
+                  $this->error_description .= "Waring: Floor <".$this->floor."> not found in R-Square.Property is created in R-Square. Hence setting it to empty<br/>";   
+              }
           }
 
           if(isset($this->mapped_facing_list[$this->facing]))
@@ -650,8 +652,9 @@ Class SyncCRMService{
           {
               if(trim($this->facing) != '')
               {
-                $status = false;
-                 $this->error_description .= "File Mapping: Facing <".$this->facing."> not found in R-Square.<br/>";      
+                $status = true;
+                $this->facing = "";
+                 $this->error_description .= "Warning: File Mapping: Facing <".$this->facing."> not found in R-Square. Hence setting it to empty.<br/>";      
               }
              
           }          
