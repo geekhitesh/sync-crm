@@ -1,517 +1,517 @@
-Salesforce Location,Derived SF Location,R-Square Location
-1 Sector,1,1
-10 Sector,10,10
-100 Sector,100,100
-102 Sector,102,102
-103 Sector,103,103
-104 Sector,104,104
-105 Sector,105,105
-106 Sector,NA,NA
-107 Sector,107,107
-108 Sector,108,108
-11 Sector,11,11
-110 Sector,110,110
-112 Sector,112,112
-116 Sector,116,116
-117 Sector,117,117
-119 Sector,119,119
-12 Sector,12,12
-120 Sector,120,120
-121 Sector,121,121
-122 Sector,122,122
-125 Sector,125,125
-126 Sector,126,126
-127 Sector,127,127
-128 Sector,128,128
-129 Sector,129,129
-130 Sector,130,130
-131 Sector,131,131
-132 Sector,132,132
-133 Sector,133,133
-134 Sector,134,134
-135 Sector,135,135
-136 Sector,NA,NA
-137 Sector,137,137
-138 Sector,138,138
-139 Sector,NA,NA
-14 Sector,14,14
-140 Sector,140,140
-140a Sector,NA,NA
-141 Sector,NA,NA
-142 Sector,142,142
-143 Sector,143,143
-143A Sector,NA,NA
-144 Sector,144,144
-145 Sector,NA,NA
-14A Sector,NA,NA
-15 Sector,15,15
-150 Sector,150,150
-151 Sector,151,151
-153 Sector,153,153
-154 Sector,154,154
-155 Sector,NA,NA
-15A Sector,15A,15A
+"Salesforce Location","Derived SF Location","R-Square Location"
+"1 Sector",1,1
+"10 Sector",10,10
+"100 Sector",100,100
+"102 Sector",102,102
+"103 Sector",103,103
+"104 Sector",104,104
+"105 Sector",105,105
+"106 Sector",NA,NA
+"107 Sector",107,107
+"108 Sector",108,108
+"11 Sector",11,11
+"110 Sector",110,110
+"112 Sector",112,112
+"116 Sector",116,116
+"117 Sector",117,117
+"119 Sector",119,119
+"12 Sector",12,12
+"120 Sector",120,120
+"121 Sector",121,121
+"122 Sector",122,122
+"125 Sector",125,125
+"126 Sector",126,126
+"127 Sector",127,127
+"128 Sector",128,128
+"129 Sector",129,129
+"130 Sector",130,130
+"131 Sector",131,131
+"132 Sector",132,132
+"133 Sector",133,133
+"134 Sector",134,134
+"135 Sector",135,135
+"136 Sector",NA,NA
+"137 Sector",137,137
+"138 Sector",138,138
+"139 Sector",NA,NA
+"14 Sector",14,14
+"140 Sector",140,140
+"140a Sector",NA,NA
+"141 Sector",NA,NA
+"142 Sector",142,142
+"143 Sector",143,143
+"143A Sector",NA,NA
+"144 Sector",144,144
+"145 Sector",NA,NA
+"14A Sector",NA,NA
+"15 Sector",15,15
+"150 Sector",150,150
+"151 Sector",151,151
+"153 Sector",153,153
+"154 Sector",154,154
+"155 Sector",NA,NA
+"15A Sector",15A,15A
 "15A, 44, 50 & 93 SECTOR",NA,NA
-16 b Sector,16B,16B
-16 Sector,16,16
-163 Sector,NA,NA
-164 Sector,NA,NA
-168 Sector,NA,NA
-16A Sector,16A,16A
-16B Sector,16B,16B
-17 Sector,17,17
-17A Sector,NA,NA
-18 Sector,18,18
-19 Sector,19,19
-19A Sector,NA,NA
-2 Sector,2,2
-20  Sector,20,20
-20 Sector,20,20
-21 Sector,21,21
-22 Sector,22,22
-22D Sector,NA,NA
-23 Sector,23,23
-24 Sector,24,24
-25 Sector,25,25
-25A Sector,25A,25A
-26 Sector,26,26
-26A Sector,NA,NA
-27 Sector,27,27
-28 Sector,28,28
-29     In Army flat,NA,NA
-29 Sector,29,29
-3 Sector,3,3
-30 Sector,30,30
-31 Sector,31,31
-32 Sector,32,32
-33 Sector,33,33
-34 Sector,34,34
-35 Sector,35,35
-36 Sector,36,36
-37 Sector,37,37
-38 Sector,38,38
-38A Sector,38A,38A
-39 Sector,39,39
-3c YEA,NA,NA
-4 Sector,4,4
-40 Sector,40,40
-41 Sector,41,41
-42 Sector,42,42
-43 Sector,43,43
-44 Sector,44,44
-45 Sector,45,45
-46 Sector,46,46
-47 Sector,47,47
-48 Sector,48,48
-49 Sector,49,49
-5 Sector,5,5
-50 Sector,50,50
-51 Sector,51,51
-52 Sector,52,52
-53 Sector,53,53
-54 Sector,54,54
-55 Sector,55,55
-56 Sector,56,56
-57 Sector,57,57
-58 Sector,58,58
-59 Sector,59,59
-6 Sector,6,6
-60 Sector,60,60
-61 Sector,61,61
-62 Sector,62,62
-63 Sector,63,63
-63A Sector,NA,NA
-64 Sector,64,64
-65 Sector,65,65
-66 Sector,66,66
-67 Sector,67,67
-68 Sector,68,68
-7 Sector,7,7
-70 Sector,70,70
-71 Sector,71,71
-72 Sector,72,72
-73 Sector,73,73
-74 Sector,74,74
-75 Sector,75,75
-76  Sector,76,76
-76 Sector,76,76
-77 Sector,77,77
-78  Sector,78,78
-78 Sector,78,78
-79 Sector,79,79
-8 Sector,8,8
-80 Sector,80,80
-81 Sector,81,81
-82 Sector,82,82
-83 Sector,83,83
-84 Sector,84,84
-85 Sector,85,85
-86 Sector,86,86
-87 Sector,87,87
-88 Sector,88,88
-89 Sector,89,89
-9 Sector,9,9
-90 Sector,90,90
-91 Sector,91,91
-92 Sector,92,92
-93 Sector,93,93
-93A Sector,NA,NA
-93b  Sector,93B,93B
-93B Sector,93B,93B
-94 Sector,94,94
-96 Sector,96,96
-98 Sector,98,98
-99 Sector,99,99
-Adjoining Metro Route,NA,NA
-AGRICALTURE LAND,NA,NA
-Alok Vihar-I,NA,NA
-Alok Vihar-II,NA,NA
+"16 b Sector",16B,16B
+"16 Sector",16,16
+"163 Sector",NA,NA
+"164 Sector",NA,NA
+"168 Sector",NA,NA
+"16A Sector",16A,16A
+"16B Sector",16B,16B
+"17 Sector",17,17
+"17A Sector",NA,NA
+"18 Sector",18,18
+"19 Sector",19,19
+"19A Sector",NA,NA
+"2 Sector",2,2
+"20  Sector",20,20
+"20 Sector",20,20
+"21 Sector",21,21
+"22 Sector",22,22
+"22D Sector",NA,NA
+"23 Sector",23,23
+"24 Sector",24,24
+"25 Sector",25,25
+"25A Sector",25A,25A
+"26 Sector",26,26
+"26A Sector",NA,NA
+"27 Sector",27,27
+"28 Sector",28,28
+"29     In Army flat",NA,NA
+"29 Sector",29,29
+"3 Sector",3,3
+"30 Sector",30,30
+"31 Sector",31,31
+"32 Sector",32,32
+"33 Sector",33,33
+"34 Sector",34,34
+"35 Sector",35,35
+"36 Sector",36,36
+"37 Sector",37,37
+"38 Sector",38,38
+"38A Sector",38A,38A
+"39 Sector",39,39
+"3c YEA",NA,NA
+"4 Sector",4,4
+"40 Sector",40,40
+"41 Sector",41,41
+"42 Sector",42,42
+"43 Sector",43,43
+"44 Sector",44,44
+"45 Sector",45,45
+"46 Sector",46,46
+"47 Sector",47,47
+"48 Sector",48,48
+"49 Sector",49,49
+"5 Sector",5,5
+"50 Sector",50,50
+"51 Sector",51,51
+"52 Sector",52,52
+"53 Sector",53,53
+"54 Sector",54,54
+"55 Sector",55,55
+"56 Sector",56,56
+"57 Sector",57,57
+"58 Sector",58,58
+"59 Sector",59,59
+"6 Sector",6,6
+"60 Sector",60,60
+"61 Sector",61,61
+"62 Sector",62,62
+"63 Sector",63,63
+"63A Sector",NA,NA
+"64 Sector",64,64
+"65 Sector",65,65
+"66 Sector",66,66
+"67 Sector",67,67
+"68 Sector",68,68
+"7 Sector",7,7
+"70 Sector",70,70
+"71 Sector",71,71
+"72 Sector",72,72
+"73 Sector",73,73
+"74 Sector",74,74
+"75 Sector",75,75
+"76  Sector",76,76
+"76 Sector",76,76
+"77 Sector",77,77
+"78  Sector",78,78
+"78 Sector",78,78
+"79 Sector",79,79
+"8 Sector",8,8
+"80 Sector",80,80
+"81 Sector",81,81
+"82 Sector",82,82
+"83 Sector",83,83
+"84 Sector",84,84
+"85 Sector",85,85
+"86 Sector",86,86
+"87 Sector",87,87
+"88 Sector",88,88
+"89 Sector",89,89
+"9 Sector",9,9
+"90 Sector",90,90
+"91 Sector",91,91
+"92 Sector",92,92
+"93 Sector",93,93
+"93A Sector",NA,NA
+"93b  Sector",93B,93B
+"93B Sector",93B,93B
+"94 Sector",94,94
+"96 Sector",96,96
+"98 Sector",98,98
+"99 Sector",99,99
+"Adjoining Metro Route",NA,NA
+"AGRICALTURE LAND",NA,NA
+"Alok Vihar-I",NA,NA
+"Alok Vihar-II",NA,NA
 AMRAPALI,NA,NA
-NSEZ,Opp to NSEZ,Opp to NSEZ
+NSEZ,"Opp to NSEZ","Opp to NSEZ"
 "AMRAPALI,Sector 119",NA,NA
-ANSAL FORTUNE ARCADE,NA,NA
+"ANSAL FORTUNE ARCADE",NA,NA
 ANY,NA,NA
-Army Officer Flat,NA,NA
-ATS Village Forest,NA,NA
+"Army Officer Flat",NA,NA
+"ATS Village Forest",NA,NA
 barola,NA,NA
 Blank,NA,NA
-CENTER STAGE MALL,NA,NA
-chipyana village,NA,NA
+"CENTER STAGE MALL",NA,NA
+"chipyana village",NA,NA
 CORENTHUM,NA,NA
-ECO TECH -3,NA,NA
-Eco Village 2,NA,NA
+"ECO TECH -3",NA,NA
+"Eco Village 2",NA,NA
 Eldeco,NA,NA
-Eldeco Silvercity,NA,NA
-Eldeco Utopia,NA,NA
+"Eldeco Silvercity",NA,NA
+"Eldeco Utopia",NA,NA
 "Eldeco Utopia,Sector 93",NA,NA
 Expressway,Expressway,Expressway
-FARM LAND,NA,NA
-Green Bay,NA,NA
-Hosiery Complex,Hosiery Complex,Hosiery Complex
+"FARM LAND",NA,NA
+"Green Bay",NA,NA
+"Hosiery Complex","Hosiery Complex","Hosiery Complex"
 Indirapuram,NA,NA
 J.P.Greens,NA,NA
-Jaypee Aman,NA,NA
-Jaypee Kensington,NA,NA
-Jaypee Kosmos,NA,NA
-Jaypee Sports City,NA,NA
-Kendriya Vihar,NA,NA
+"Jaypee Aman",NA,NA
+"Jaypee Kensington",NA,NA
+"Jaypee Kosmos",NA,NA
+"Jaypee Sports City",NA,NA
+"Kendriya Vihar",NA,NA
 "Kendriya Vihar,Sector 51",NA,NA
 Logix,NA,NA
-Lotus Boulevard,NA,NA
-Lotus Panache,NA,NA
+"Lotus Boulevard",NA,NA
+"Lotus Panache",NA,NA
 manesar,NA,NA
-MAYUR VIHAR,NA,NA
-near by flora farm house,NA,NA
+"MAYUR VIHAR",NA,NA
+"near by flora farm house",NA,NA
 NEPZ,NA,NA
-Noida Extension,Noida Extension,Noida Extension
-Noida Extension 1,Noida Phase 1,Noida Phase 1
-Noida Extension 4,Noida Phase 2,Noida Phase 2
-noida extinction,Noida Phase 3,Noida Phase 3
-Noida Heights,NA,NA
+"Noida Extension","Noida Extension","Noida Extension"
+"Noida Extension 1","Noida Phase 1","Noida Phase 1"
+"Noida Extension 4","Noida Phase 2","Noida Phase 2"
+"noida extinction","Noida Phase 3","Noida Phase 3"
+"Noida Heights",NA,NA
 ----None----,NA,NA
-NRI Residency YEA,NA,NA
+"NRI Residency YEA",NA,NA
 NULL,NA,NA
 Omaxe,NA,NA
-Omaxe Grandwoods,NA,NA
+"Omaxe Grandwoods",NA,NA
 "Omaxe Grandwoods,Sector 93",NA,NA
 "Omaxe Grandwoods,Sector 93B",NA,NA
-Orris YEA,NA,NA
+"Orris YEA",NA,NA
 Paramount,NA,NA
-Paras Tierea,NA,NA
-Phase 2,Phase 2,Phase 2
-phase I,NA,NA
-phase II,Phase 2,Phase 2
-Rajat Vihar,NA,NA
-Sector 108 Sector,108,108
-Sector 39 Sector,39,39
-Sector 62 Sector,62,62
-Sector 63 Sector,63,63
-Sector 71 Sector,71,71
-Sector 93 Sector,93,93
-Sector chandani chowk Sector,NA,NA
+"Paras Tierea",NA,NA
+"Phase 2","Phase 2","Phase 2"
+"phase I",NA,NA
+"phase II","Phase 2","Phase 2"
+"Rajat Vihar",NA,NA
+"Sector 108 Sector",108,108
+"Sector 39 Sector",39,39
+"Sector 62 Sector",62,62
+"Sector 63 Sector",63,63
+"Sector 71 Sector",71,71
+"Sector 93 Sector",93,93
+"Sector chandani chowk Sector",NA,NA
 SEZ,NA,NA
-Shatabdi Vihar,NA,NA
+"Shatabdi Vihar",NA,NA
 Silvercity,NA,NA
-Supertech Eco Village,NA,NA
-Supertech YEA,NA,NA
-Swarn Nagri,Swarn Nagri,Swarn Nagri
-Test Location,NA,NA
-Unitech Grande,NA,NA
-UNITECH HEIGHT,NA,NA
-UNITECH MALL,NA,NA
-vivek vihar,NA,NA
-Yamuna Expressway,Yamuna Expressway,Yamuna Expressway
-EIE,NA ,NA 
-ATS Dolce,NA ,NA 
-Ashiana Orchids,NA ,NA 
-Divine Grace Society ,NA ,NA 
-Omaxe ITC,NA ,NA 
-47 Sector,NA,NA
+"Supertech Eco Village",NA,NA
+"Supertech YEA",NA,NA
+"Swarn Nagri","Swarn Nagri","Swarn Nagri"
+"Test Location",NA,NA
+"Unitech Grande",NA,NA
+"UNITECH HEIGHT",NA,NA
+"UNITECH MALL",NA,NA
+"vivek vihar",NA,NA
+"Yamuna Expressway","Yamuna Expressway","Yamuna Expressway"
+EIE,"NA ","NA "
+"ATS Dolce","NA ","NA "
+"Ashiana Orchids","NA ","NA "
+"Divine Grace Society ","NA ","NA "
+"Omaxe ITC","NA ","NA "
+"47 Sector",NA,NA
 Alfa,Alfa,Alfa
-Alfa Commercial Belt ,Alfa Commercial Belt ,Alfa Commercial Belt 
-Ambe Bharti,NA,NA
-Amrapali Grand ,NA,NA
-Anand Ashray,NA,NA
-Ansal Golf Link-I,Ansal Golf Links 1,Ansal Golf Links 1
-Ansal Golf Link-II,Ansal Golf Link-II,Ansal Golf Link-II
-Ansal Megapolis,NA,NA
-Assal Plaza,NA,NA
-Arsh Complex,NA,NA
-Assotech Springfields,NA,NA
-Ats Paradiso,NA,NA
-AWHO Society,NA,NA
+"Alfa Commercial Belt ","Alfa Commercial Belt ","Alfa Commercial Belt "
+"Ambe Bharti",NA,NA
+"Amrapali Grand ",NA,NA
+"Anand Ashray",NA,NA
+"Ansal Golf Link-I","Ansal Golf Links 1","Ansal Golf Links 1"
+"Ansal Golf Link-II","Ansal Golf Link-II","Ansal Golf Link-II"
+"Ansal Megapolis",NA,NA
+"Assal Plaza",NA,NA
+"Arsh Complex",NA,NA
+"Assotech Springfields",NA,NA
+"Ats Paradiso",NA,NA
+"AWHO Society",NA,NA
 Beta,Beta,Beta
-Black Gold Society,NA,NA
-BPTP ,NA,NA
-Canara Bank Society ,NA,NA
-Celebrity Greens,NA,NA
+"Black Gold Society",NA,NA
+"BPTP ",NA,NA
+"Canara Bank Society ",NA,NA
+"Celebrity Greens",NA,NA
 Chi,Chi,Chi
-Chi Phi,Chi Phi,Chi Phi
-Dadri ,Dadri ,Dadri 
+"Chi Phi","Chi Phi","Chi Phi"
+"Dadri ","Dadri ","Dadri "
 Delta,Delta,Delta
 EIEI,NA,NA
-Ecotech -1,Ecotech 1,Ecotech 1
-Ecotech -11,NA,NA
-Ecotech -12,NA,NA
-Ecotech -2,Ecotech 2,Ecotech 2
-Ecotech -6,NA,NA
-Elanki Enclave ,NA,NA
-Eldeco Green View ,NA,NA
-Eldeco Green Meadow,NA,NA
-Eldeco Residential Greens,NA,NA
-Engineers Park,NA,NA
+"Ecotech -1","Ecotech 1","Ecotech 1"
+"Ecotech -11",NA,NA
+"Ecotech -12",NA,NA
+"Ecotech -2","Ecotech 2","Ecotech 2"
+"Ecotech -6",NA,NA
+"Elanki Enclave ",NA,NA
+"Eldeco Green View ",NA,NA
+"Eldeco Green Meadow",NA,NA
+"Eldeco Residential Greens",NA,NA
+"Engineers Park",NA,NA
 EPIP,NA,NA
-Eta -2,Eta II,Eta II
-Expo Mart,NA,NA
-G.Noida Shopping Plaza,NA,NA
-G.T.Road ,NA,NA
-Gail Society ,NA,NA
-Gama ,gama,gama
-Gandharve Society,NA,NA
-Gharonda Apartment ,NA,NA
-Golf Gardenia,NA,NA
-Golf Vista Apatment ,NA,NA
-Grande Foreste ,NA,NA
-Gand Vebezia,NA,NA
-Green Wood- I,NA,NA
-Green Wood- II,NA,NA
-Ecotech -3,Ecotech 3,Ecotech 3
-Harmukh Apartment,NA,NA
-Himsagar Apartment,NA,NA
-Infomatics Apartment,NA,NA
-Institutional Green,NA,NA
-J.P Greens,Jaypee Greens,Jaypee Greens
-Jaypee Sports City ,Sports City,Sports City
-Khushboo Apartment,NA,NA
-Knowledge Park -1,Knowledge Park I,Knowledge Park I
-Knowledge Park -2,Knowledge Park II,Knowledge Park II
-Knowledge Park -3,Knowledge Park III,Knowledge Park III
-Knowledge Park -4,Knowledge Park IV,Knowledge Park IV
-Knowledge Park -5,Knowledge Park V,Knowledge Park V
-Lg Employee Society ,NA,NA
+"Eta -2","Eta II","Eta II"
+"Expo Mart",NA,NA
+"G.Noida Shopping Plaza",NA,NA
+"G.T.Road ",NA,NA
+"Gail Society ",NA,NA
+"Gama ",gama,gama
+"Gandharve Society",NA,NA
+"Gharonda Apartment ",NA,NA
+"Golf Gardenia",NA,NA
+"Golf Vista Apatment ",NA,NA
+"Grande Foreste ",NA,NA
+"Gand Vebezia",NA,NA
+"Green Wood- I",NA,NA
+"Green Wood- II",NA,NA
+"Ecotech -3","Ecotech 3","Ecotech 3"
+"Harmukh Apartment",NA,NA
+"Himsagar Apartment",NA,NA
+"Infomatics Apartment",NA,NA
+"Institutional Green",NA,NA
+"J.P Greens","Jaypee Greens","Jaypee Greens"
+"Jaypee Sports City ","Sports City","Sports City"
+"Khushboo Apartment",NA,NA
+"Knowledge Park -1","Knowledge Park I","Knowledge Park I"
+"Knowledge Park -2","Knowledge Park II","Knowledge Park II"
+"Knowledge Park -3","Knowledge Park III","Knowledge Park III"
+"Knowledge Park -4","Knowledge Park IV","Knowledge Park IV"
+"Knowledge Park -5","Knowledge Park V","Knowledge Park V"
+"Lg Employee Society ",NA,NA
 M.I.Legacy,NA,NA
 M.U.P,NA,NA
 Manglapuri,NA,NA
-Meenakshi Society,NA,NA
-Millenium Village ,NA,NA
-MSX Mall,NA,NA
+"Meenakshi Society",NA,NA
+"Millenium Village ",NA,NA
+"MSX Mall",NA,NA
 MU,MU,MU
-MU 1,MU 1,MU 1
-MU 2,MU 2,MU 2
-Nea Apartment ,NA,NA
-Nitishree Alstonia,NA,NA
-NTPC Society ,NA,NA
+"MU 1","MU 1","MU 1"
+"MU 2","MU 2","MU 2"
+"Nea Apartment ",NA,NA
+"Nitishree Alstonia",NA,NA
+"NTPC Society ",NA,NA
 OCP,NA,NA
-Omaxe Arcade ,NA,NA
-Omaxe NRI City ,NA,NA
-Omaxe Palm Greens,NA,NA
-Omaxe Putting Greens,NA,NA
+"Omaxe Arcade ",NA,NA
+"Omaxe Palm Greens",NA,NA
+"Omaxe Putting Greens",NA,NA
 Omega,Omega,Omega
-Omicron I,Omicron 1,Omicron 1
-Omicron IA,Omicron 1A,Omicron 1A
-Omicron II,Omicron2,Omicron2
-Omicron III,Omicron3,Omicron3
-P 1,NA,NA
-P 2,P 2,P 2
-P 3,P 3,P 3
-P 4,NA,NA
-P 5,NA,NA
-P 6,NA,NA
-P 7,NA,NA
-Paras Deep Society ,NA,NA
-Parsavnath Edens,NA,NA
-Parsavnath Estate,NA,NA
-Parsavnath Panorama,NA,NA
-Parsavnath Platinum,NA,NA
-Parsavnath Priviledge,NA,NA
+"Omicron I","Omicron 1","Omicron 1"
+"Omicron IA","Omicron 1A","Omicron 1A"
+"Omicron II",Omicron2,Omicron2
+"Omicron III",Omicron3,Omicron3
+"P 1",NA,NA
+"P 2","P 2","P 2"
+"P 3","P 3","P 3"
+"P 4",NA,NA
+"P 5",NA,NA
+"P 6",NA,NA
+"P 7",NA,NA
+"Paras Deep Society ",NA,NA
+"Parsavnath Edens",NA,NA
+"Parsavnath Estate",NA,NA
+"Parsavnath Panorama",NA,NA
+"Parsavnath Platinum",NA,NA
+"Parsavnath Priviledge",NA,NA
 Phi,Phi,Phi
-Pi -1,Phi I,Phi I
-Pi -2,Phi II,Phi II
-Plumeria Garden,NA,NA
-Prakash Industrial Estate ,NA,NA
-Purvanchal Heights,NA,NA
+"Pi -1","Phi I","Phi I"
+"Pi -2","Phi II","Phi II"
+"Plumeria Garden",NA,NA
+"Prakash Industrial Estate ",NA,NA
+"Purvanchal Heights",NA,NA
 Purvanchals,NA,NA
-Purvanchal Silver City -2,NA,NA
-Raksha Enclave ,NA,NA
-Samia Media Village ,NA,NA
-Samia Singapore Residency ,NA,NA
-Samvad Apartment,NA,NA
+"Purvanchal Silver City -2",NA,NA
+"Raksha Enclave ",NA,NA
+"Samia Media Village ",NA,NA
+"Samia Singapore Residency ",NA,NA
+"Samvad Apartment",NA,NA
 Satbari,NA,NA
-Senior Citizen,NA,NA
+"Senior Citizen",NA,NA
 Sigma,Sigma,Sigma
-Sigma -3,Sigma III,Sigma III
-Sigma -4,Sigma IV ,Sigma IV 
+"Sigma -3","Sigma III","Sigma III"
+"Sigma -4","Sigma IV ","Sigma IV "
 Sikandrabad,NA,NA
-Site B,Site B,Site B
-Site -C,Site C,Site C
-Site-IV,Site 4,Site 4
-Site-V,Site 5,Site 5
-Sivkala Charm Society ,NA,NA
-SNG Plaza,NA,NA
-Supertech Czar Suite,NA,NA
-Swarn  Nagri ,Swarn Nagri ,Swarn Nagri 
-Tata Steel Enclave ,NA,NA
-Techzone ,Techzone,Techzone
-Techzone - 4,Tech Zone 4 ,Tech Zone 4 
-Unitech Cascade ,NA,NA
-Unitech Heights,NA,NA
-Unitech Horizon,NA,NA
-Unitech Verve ,NA,NA
-Wegman IT Park,NA,NA
-Xu -1,Xu I ,Xu I 
-Xu -2, Xu 2 , Xu 2 
-Xu -3,Xu III,Xu III
+"Site B","Site B","Site B"
+"Site -C","Site C","Site C"
+Site-IV,"Site 4","Site 4"
+Site-V,"Site 5","Site 5"
+"Sivkala Charm Society ",NA,NA
+"SNG Plaza",NA,NA
+"Supertech Czar Suite",NA,NA
+"Swarn  Nagri ","Swarn Nagri ","Swarn Nagri "
+"Tata Steel Enclave ",NA,NA
+"Techzone ",Techzone,Techzone
+"Techzone - 4","Tech Zone 4 ","Tech Zone 4 "
+"Unitech Cascade ",NA,NA
+"Unitech Heights",NA,NA
+"Unitech Horizon",NA,NA
+"Wegman IT Park",NA,NA
+"Xu -1","Xu I ","Xu I "
+"Xu -2"," Xu 2 "," Xu 2 "
+"Xu -3","Xu III","Xu III"
 Zeta,Zeta,Zeta
-Zeta -2,Zeta 2,Zeta 2
-Pari chowk,Pari Chowk,Pari Chowk
-Vrinda City ,NA,NA
-Unitech Habitat,NA,NA
-N.R.I. City ,Nri City,Nri City
-Icon Apartment ,NA,NA
-Building No.-31,NA ,NA 
-M G Road,NA ,NA 
-New Rohtak Road,NA ,NA 
-27 Sector ,27,27
-EIA,NA ,NA 
-Golf Link 2,Golf Link 2,Golf Link 2
-Golf Link 1,Golf Link I,Golf Link I
-Greater Noida-West,Greater Noida West,Greater Noida West
-Hemisphere ,NA ,NA 
-Paramount Golf Foreste,NA ,NA 
-Gama 2,Gama 2,Gama 2
-3 Sector ,3,3
-36 Sector ,36,36
-16c Sector ,NA,NA
-37 Sector ,37,37
-2 Sector ,2,2
-Unitech Mall ,NA ,NA 
-Uppal Chadha Plum,NA ,NA 
-Eta  ,Eta ,Eta 
-Golf course Road,Golf Course Road ,Golf Course Road 
-Mg Road Gurgaon,MG Road,MG Road
-Sushant Lok 2,Sushant Lok 2 ,Sushant Lok 2 
-Sohna road,Sohna Road,Sohna Road
-69 Sector,69,69
-Golf course Ext. Road,Golf Course Road,Golf Course Road
-DLF 4,Dlf Phase 4,Dlf Phase 4
-Sushant Lok 1,Sushant Lok 1 ,Sushant Lok 1 
-109 Sector,109,109
-DLF 1,Dlf Phase 1 ,Dlf Phase 1 
+"Zeta -2","Zeta 2","Zeta 2"
+"Pari chowk","Pari Chowk","Pari Chowk"
+"Vrinda City ",NA,NA
+"Unitech Habitat",NA,NA
+"N.R.I. City ","Nri City","Nri City"
+"Icon Apartment ",NA,NA
+"Building No.-31","NA ","NA "
+"M G Road","NA ","NA "
+"New Rohtak Road","NA ","NA "
+"27 Sector ",27,27
+EIA,"NA ","NA "
+"Golf Link 2","Golf Link 2","Golf Link 2"
+"Golf Link 1","Golf Link I","Golf Link I"
+"Greater Noida-West","Greater Noida West","Greater Noida West"
+"Hemisphere ","NA ","NA "
+"Paramount Golf Foreste","NA ","NA "
+"Gama 2","Gama 2","Gama 2"
+"3 Sector ",3,3
+"36 Sector ",36,36
+"16c Sector ",NA,NA
+"37 Sector ",37,37
+"2 Sector ",2,2
+"Unitech Mall ","NA ","NA "
+"Uppal Chadha Plum","NA ","NA "
+"Eta  ","Eta ","Eta "
+"Golf course Road","Golf Course Road ","Golf Course Road "
+"Mg Road Gurgaon","MG Road","MG Road"
+"Sushant Lok 2","Sushant Lok 2 ","Sushant Lok 2 "
+"Sohna road","Sohna Road","Sohna Road"
+"69 Sector",69,69
+"Golf course Ext. Road","Golf Course Road","Golf Course Road"
+"DLF 4","Dlf Phase 4","Dlf Phase 4"
+"Sushant Lok 1","Sushant Lok 1 ","Sushant Lok 1 "
+"109 Sector",109,109
 Dharuhera,Dharuhera,Dharuhera
-DLF 3,Dlf Phase 3,Dlf Phase 3
-23A Sector,23A,23A
-DLF II,Dlf Phase 2,Dlf Phase 2
-DLF IV,Dlf Phase 4 ,Dlf Phase 4 
-DLF III,Dlf Phase 3 ,Dlf Phase 3 
-DLF I,Dlf Phase 1,Dlf Phase 1
-RAHEJA ATLANTIS,NA,NA
-114 Sector,114,114
-DHARUHEDA,Dharuhera ,Dharuhera 
-95 Sector,95,95
-SAHARA MALL,NA,NA
-Manesar Sector 1,Manesar Sector 1,Manesar Sector 1
-Manesar Sector 4,Manesar Sector 4,Manesar Sector 4
-Dlf Phase II,Dlf Phase 2,Dlf Phase 2
-DLF PH III,Dlf Phase 3,Dlf Phase 3
-Sultan Pur,Sultanpur ,Sultanpur 
-Golf Course,Golf Course Road ,Golf Course Road 
-Phase 1,Dlf Phase 1 ,Dlf Phase 1 
-WELLDONE TECH PARK,NA,NA
-NIRVANA COUNTRY-1,NA,NA
+"DLF 3","Dlf Phase 3","Dlf Phase 3"
+"23A Sector",23A,23A
+"DLF II","Dlf Phase 2","Dlf Phase 2"
+"DLF IV","Dlf Phase 4 ","Dlf Phase 4 "
+"DLF III","Dlf Phase 3 ","Dlf Phase 3 "
+"DLF I","Dlf Phase 1","Dlf Phase 1"
+"RAHEJA ATLANTIS",NA,NA
+"114 Sector",114,114
+DHARUHEDA,"Dharuhera ","Dharuhera "
+"95 Sector",95,95
+"SAHARA MALL",NA,NA
+"Manesar Sector 1","Manesar Sector 1","Manesar Sector 1"
+"Manesar Sector 4","Manesar Sector 4","Manesar Sector 4"
+"Dlf Phase II","Dlf Phase 2","Dlf Phase 2"
+"DLF PH III","Dlf Phase 3","Dlf Phase 3"
+"Sultan Pur","Sultanpur ","Sultanpur "
+"Golf Course","Golf Course Road ","Golf Course Road "
+"Phase 1","Dlf Phase 1 ","Dlf Phase 1 "
+"WELLDONE TECH PARK",NA,NA
+"NIRVANA COUNTRY-1",NA,NA
 Orris,NA,NA
-17A Sector,17A ,17A 
-VATIKA CITY,NA,NA
-SUSHANT LOK I,Sushant Lok 1 ,Sushant Lok 1 
+"17A Sector","17A ","17A "
+"VATIKA CITY",NA,NA
+"SUSHANT LOK I","Sushant Lok 1 ","Sushant Lok 1 "
 BPTP,NA,NA
-BPTP Spacio,NA,NA
-89A Sector,89 A ,89 A 
-88A Sector,88 A ,88 A 
-63A Sector,63A,63A
-Radhey Mohan Drive,Radhey Mohan Drive,Radhey Mohan Drive
-Dera Mandi,Dera Mandi,Dera Mandi
+"BPTP Spacio",NA,NA
+"89A Sector","89 A ","89 A "
+"88A Sector","88 A ","88 A "
+"63A Sector",63A,63A
+"Radhey Mohan Drive","Radhey Mohan Drive","Radhey Mohan Drive"
+"Dera Mandi","Dera Mandi","Dera Mandi"
 Kapasera,Kapashera,Kapashera
-Saket,Saket ,Saket 
-East of Kailash,East of Kailash ,East of Kailash 
+Saket,"Saket ","Saket "
+"East of Kailash","East of Kailash ","East of Kailash "
 Jangpura,Jangpura,Jangpura
-Mohan Cooperative,Mohan Cooperative,Mohan Cooperative
-Sunder Nagar,Sunder Nagar ,Sunder Nagar 
-Lajpat nagar -1,Lajpat Nagar 1,Lajpat Nagar 1
-Sarvodya Enclave,Sarvodaya Enclave,Sarvodaya Enclave
-Okhla ph 2,Okhla Phase 2,Okhla Phase 2
-Nehru Place,Nehru Place ,Nehru Place 
-Kailash Colony,Kailash Colony ,Kailash Colony 
-Maharani Bagh,Maharani Bagh,Maharani Bagh
-Kalkaji,Kalkaji ,Kalkaji 
-Defence Colony,Defence Colony,Defence Colony
-Lajpat nagar -3,Lajpat Nagar 3 ,Lajpat Nagar 3 
-Chanakyapuri,Chanakyapuri ,Chanakyapuri 
-Okhla ph 1,Okhla Phase 1,Okhla Phase 1
-Chattarpur,Chattarpur ,Chattarpur 
-Lajpat nagar -2,Lajpat Nagar 2,Lajpat Nagar 2
-South Ex 1,South Extension 1,South Extension 1
-Lajpat nagar -4,Lajpat Nagar 4,Lajpat Nagar 4
-Sultanpur,Sultanpur ,Sultanpur 
-C R Park,Chittaranjan Park,Chittaranjan Park
-sarvpriya vihar,Sarvapriya Vihar,Sarvapriya Vihar
-Greater Kailash -2,GK 2 ,GK 2 
-New Friends Colony,New Friends Colony ,New Friends Colony 
-hauz khas enclave,Hauz Khas Enclave ,Hauz Khas Enclave 
-Malviya Nagar,Malviya Nagar ,Malviya Nagar 
-Green Park Extn,Green Park Extn,Green Park Extn
-HAUZ KHAS,Hauz Khas,Hauz Khas
-Jasola,jasola ,jasola 
-Safdarjung Enclave,Safdarjung Enclave,Safdarjung Enclave
-Ghitorni,Ghitorni ,Ghitorni 
-South Ex 2,South Extension 2,South Extension 2
-Shanti Niketan,Shanti Niketan ,Shanti Niketan 
-Okhla ph 3,Okhla Phase 3,Okhla Phase 3
-Anand Niketan,Anand Niketan,Anand Niketan
-NIZAMUDDIN WEST,Nizamuddin West,Nizamuddin West
-Anand lok,Anand Lok,Anand Lok
-Pamposh Enclave,Pamposh Enclave ,Pamposh Enclave 
+"Mohan Cooperative","Mohan Cooperative","Mohan Cooperative"
+"Sunder Nagar","Sunder Nagar ","Sunder Nagar "
+"Lajpat nagar -1","Lajpat Nagar 1","Lajpat Nagar 1"
+"Sarvodya Enclave","Sarvodaya Enclave","Sarvodaya Enclave"
+"Okhla ph 2","Okhla Phase 2","Okhla Phase 2"
+"Nehru Place","Nehru Place ","Nehru Place "
+"Kailash Colony","Kailash Colony ","Kailash Colony "
+"Maharani Bagh","Maharani Bagh","Maharani Bagh"
+Kalkaji,"Kalkaji ","Kalkaji "
+"Defence Colony","Defence Colony","Defence Colony"
+"Lajpat nagar -3","Lajpat Nagar 3 ","Lajpat Nagar 3 "
+Chanakyapuri,"Chanakyapuri ","Chanakyapuri "
+"Okhla ph 1","Okhla Phase 1","Okhla Phase 1"
+Chattarpur,"Chattarpur ","Chattarpur "
+"Lajpat nagar -2","Lajpat Nagar 2","Lajpat Nagar 2"
+"South Ex 1","South Extension 1","South Extension 1"
+"Lajpat nagar -4","Lajpat Nagar 4","Lajpat Nagar 4"
+Sultanpur,"Sultanpur ","Sultanpur "
+"C R Park","Chittaranjan Park","Chittaranjan Park"
+"sarvpriya vihar","Sarvapriya Vihar","Sarvapriya Vihar"
+"Greater Kailash -2","GK 2 ","GK 2 "
+"New Friends Colony","New Friends Colony ","New Friends Colony "
+"Malviya Nagar","Malviya Nagar ","Malviya Nagar "
+"Green Park Extn","Green Park Extn","Green Park Extn"
+"HAUZ KHAS","Hauz Khas","Hauz Khas"
+Jasola,"jasola ","jasola "
+"Safdarjung Enclave","Safdarjung Enclave","Safdarjung Enclave"
+Ghitorni,"Ghitorni ","Ghitorni "
+"South Ex 2","South Extension 2","South Extension 2"
+"Shanti Niketan","Shanti Niketan ","Shanti Niketan "
+"Okhla ph 3","Okhla Phase 3","Okhla Phase 3"
+"Anand Niketan","Anand Niketan","Anand Niketan"
+"NIZAMUDDIN WEST","Nizamuddin West","Nizamuddin West"
+"Anand lok","Anand Lok","Anand Lok"
+"Pamposh Enclave","Pamposh Enclave ","Pamposh Enclave "
 Gadaipur,Gadaipur,Gadaipur
-Vasant Vihar,Vasant Vihar,Vasant Vihar
-Panchsheel Park,Panchsheel Park ,Panchsheel Park 
-Satbari,Satbari ,Satbari 
-Ishwar Nagar,Ishwar Nagar,Ishwar Nagar
-Asola,Asola ,Asola 
-Uday Park,Uday Park,Uday Park
-Sukhdev Vihar,Sukhdev Vihar,Sukhdev Vihar
-Nehru Enclave,Nehru Enclave,Nehru Enclave
-Sarita Vihar,Sarita Vihar,Sarita Vihar
-Neeti Bagh,Neeti Bagh ,Neeti Bagh 
-Vasant kunj,Vasant Kunj ,Vasant Kunj 
-Gulmohar Park,Gulmohar Park ,Gulmohar Park 
-Geetanjali Enclave,Geetanjali Enclave ,Geetanjali Enclave 
-Jor Bagh,Jor Bagh,Jor Bagh
-Sadhna Enclave,Sadhna Enclave,Sadhna Enclave
-GREEN PARK,Green Park,Green Park
-Greater Kailash,Greater Kailash,Greater Kailash
-Lajpat Nagar,Lajpat Nagar,Lajpat Nagar
-Okhla 3,Okhla Phase 3,Okhla Phase 3
-Greater Kailash-2,Greater Kailash 2,Greater Kailash 2
-Niti bagh,Neeti Bagh ,Neeti Bagh 
-vasat kunj,Vasant Kunj,Vasant Kunj
-East Nizamuddin,Nizamuddin East ,Nizamuddin East
-152 Sector,152,152
-GK1,Greater Kailash 1,Greater Kailash 1
+"Vasant Vihar","Vasant Vihar","Vasant Vihar"
+"Panchsheel Park","Panchsheel Park ","Panchsheel Park "
+Satbari,"Satbari ","Satbari "
+"Ishwar Nagar","Ishwar Nagar","Ishwar Nagar"
+Asola,"Asola ","Asola "
+"Uday Park","Uday Park","Uday Park"
+"Sukhdev Vihar","Sukhdev Vihar","Sukhdev Vihar"
+"Nehru Enclave","Nehru Enclave","Nehru Enclave"
+"Sarita Vihar","Sarita Vihar","Sarita Vihar"
+"Neeti Bagh","Neeti Bagh ","Neeti Bagh "
+"Vasant kunj","Vasant Kunj ","Vasant Kunj "
+"Geetanjali Enclave","Geetanjali Enclave ","Geetanjali Enclave "
+"Jor Bagh","Jor Bagh","Jor Bagh"
+"Sadhna Enclave","Sadhna Enclave","Sadhna Enclave"
+"GREEN PARK","Green Park","Green Park"
+"Greater Kailash","Greater Kailash","Greater Kailash"
+"Lajpat Nagar","Lajpat Nagar","Lajpat Nagar"
+"Okhla 3","Okhla Phase 3","Okhla Phase 3"
+"Greater Kailash-2","Greater Kailash 2","Greater Kailash 2"
+"Niti bagh","Neeti Bagh ","Neeti Bagh "
+"vasat kunj","Vasant Kunj","Vasant Kunj"
+"East Nizamuddin","Nizamuddin East ","Nizamuddin East"
+"152 Sector",152,152
+GK1,"Greater Kailash 1","Greater Kailash 1"
+"Unitech Verve",NA,NA
+"Omaxe NRI City ","Sector Omega II","Sector Omega II"
+"Gulmohar Park","Gulmohar Park","Gulmohar Park"
+"DLF 1","Dlf Phase 1","Dlf Phase 1"
+"hauz khas enclave","Hauz Khas Enclave ","Hauz Khas Enclave"
