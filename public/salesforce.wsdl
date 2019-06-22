@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+Salesforce.com Outbound Notification Web Services API Version 1.0 
+Generated on 2019-06-22 05:43:04 +0000.
+
+Copyright 2005-2019 Salesforce.com, Inc.
+All Rights Reserved
+-->
+<definitions targetNamespace="http://soap.sforce.com/2005/09/outbound"
+             xmlns="http://schemas.xmlsoap.org/wsdl/"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://soap.sforce.com/2005/09/outbound"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:ent="urn:enterprise.soap.sforce.com"
+             xmlns:ens="urn:sobject.enterprise.soap.sforce.com">
+    <types>
+
+        <schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:enterprise.soap.sforce.com">
+            <!-- Our simple ID Type -->
+            <simpleType name="ID">
+                <restriction base="xsd:string">
+                    <length value="18"/>
+                    <pattern value='[a-zA-Z0-9]{18}'/>
+                </restriction>
+            </simpleType>
+        </schema>
+
+        <schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="urn:sobject.enterprise.soap.sforce.com">
+            <import namespace="urn:enterprise.soap.sforce.com" />
+            <!-- Base sObject (abstract) -->
+            <complexType name="sObject">
+                <sequence>
+                    <element name="fieldsToNull"       type="xsd:string" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+                    <element name="Id"                 type="ent:ID" nillable="true" />
+                </sequence>
+            </complexType>
+
+            <complexType name="AggregateResult">
+                <complexContent>
+                    <extension base="ens:sObject">
+                        <sequence>
+                            <any namespace="##targetNamespace" minOccurs="0" maxOccurs="unbounded" processContents="lax"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+
+            <complexType name="RealtyForce__Matched_Property__c">
+                <complexContent>
+                    <extension base="ens:sObject">
+                        <sequence>
+                        <element name="Buniyad_Opportunity__c" nillable="true" minOccurs="0" type="ent:ID"/>
+                        <element name="Name" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Property_SubType__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Property_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Assured_Return__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Availability_Status__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Budget_Price__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Builder__c" nillable="true" minOccurs="0" type="ent:ID"/>
+                        <element name="RealtyForce__Building_Name__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Carpet_Area__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Category_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__City__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Covered_Area__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Current_Rent_P_SFT__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Facing__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Floor1__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Floor__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lease_From__c" nillable="true" minOccurs="0" type="xsd:date"/>
+                        <element name="RealtyForce__Lease_Period__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lease_Period_pl__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lease_Status__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lease_To__c" nillable="true" minOccurs="0" type="xsd:date"/>
+                        <element name="RealtyForce__Location__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lock_In_Period_pl__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Lock_in_Period__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Max_Covered_Area__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Min_Covered_Area__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Monthly_Rent__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__No_Of_Bedrooms__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__No_Of_Floors__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Picklist__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Plot_Area__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Power_Backup__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Project_Area__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Project__c" nillable="true" minOccurs="0" type="ent:ID"/>
+                        <element name="RealtyForce__Rent_Per_Sqft__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Rnt_Annual_Rent__c" nillable="true" minOccurs="0" type="xsd:double"/>
+                        <element name="RealtyForce__Road_Preference__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__State__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Status__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Ticket_Status__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="RealtyForce__Transaction_Type__c" nillable="true" minOccurs="0" type="xsd:string"/>
+                        <element name="Share_To_Buniyad_Website__c" nillable="true" minOccurs="0" type="xsd:boolean"/>
+                        </sequence>
+                    </extension>
+                </complexContent>
+            </complexType>
+
+
+        </schema>
+
+        <schema elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://soap.sforce.com/2005/09/outbound">
+            <import namespace="urn:enterprise.soap.sforce.com" />
+            <import namespace="urn:sobject.enterprise.soap.sforce.com" />
+    
+            <element name="notifications">
+                <complexType> 
+                    <sequence> 
+                    	<element name="OrganizationId" type="ent:ID" />
+                    	<element name="ActionId" type="ent:ID" />
+                    	<element name="SessionId" type="xsd:string" nillable="true" />
+                    	<element name="EnterpriseUrl" type="xsd:string" />
+                    	<element name="PartnerUrl" type="xsd:string" />
+                        <element name="Notification" maxOccurs="100" type="tns:RealtyForce__Matched_Property__cNotification" />
+                    </sequence> 
+                </complexType> 
+            </element>
+    
+            <complexType name="RealtyForce__Matched_Property__cNotification">
+                <sequence>
+                    <element name="Id" type="ent:ID" />
+                    <element name="sObject" type="ens:RealtyForce__Matched_Property__c" />
+                </sequence>
+            </complexType>
+                
+            <element name="notificationsResponse">
+                <complexType>
+                    <sequence>
+                        <element name="Ack" type="xsd:boolean" />
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </types>
+    
+    
+    <!-- Method Messages -->   
+    <message name="notificationsRequest">
+        <part element="tns:notifications" name="request"/>
+    </message>
+    <message name="notificationsResponse">
+        <part element="tns:notificationsResponse" name="response"/>
+    </message>
+
+    <!-- PortType -->
+    <portType name="NotificationPort">
+        <operation name="notifications">
+            <documentation>Process a number of notifications.</documentation>
+            <input  message="tns:notificationsRequest"/>
+            <output message="tns:notificationsResponse"/>
+        </operation>
+    </portType>
+    
+    <!-- Binding 
+         You need to write a service that implements this binding to receive the notifications
+     -->
+    <binding name="NotificationBinding" type="tns:NotificationPort">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        
+        <operation name="notifications">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output> 
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Service Endpoint -->
+    <service name="NotificationService">
+        <documentation>Notification Service Implementation</documentation>
+        <port binding="tns:NotificationBinding" name="Notification">
+            <soap:address location="http://salesforce.buniyad.com/staging-server/insert"/>
+        </port>
+    </service>
+    
+</definitions>

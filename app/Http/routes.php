@@ -36,3 +36,5 @@ Route::get('/file/list','ReferenceDataController@printFileList');
 Route::get('/file/view/{file_name}','ReferenceDataController@viewFile');
 Route::get('/file/edit/{file_name}/{row_id}','ReferenceDataController@editFile');
 Route::post('/file/save/','ReferenceDataController@saveFile');
+
+Route::any('sample-wsdl', 'SampleWsdl@index');
